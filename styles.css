@@ -199,8 +199,42 @@ header.site nav a.nav-cta:hover {
   color: #fff;
 }
 
+header.site nav a.lang {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 4px;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
 @media (max-width: 640px) {
   header.site nav .nav-hide-sm {
+    display: none;
+  }
+}
+
+/* The language switch is a fourth item at phone width, so the nav tightens
+   rather than letting the brand wrap. */
+@media (max-width: 440px) {
+  header.site .brand {
+    white-space: nowrap;
+  }
+  header.site nav {
+    gap: 2px;
+    font-size: 14px;
+  }
+  header.site nav a {
+    padding: 7px 9px;
+  }
+  header.site nav a.nav-cta,
+  header.site nav a.lang {
+    margin-left: 2px;
+  }
+}
+
+/* The footer carries the privacy policy too, so the header can drop it. */
+@media (max-width: 380px) {
+  header.site nav .nav-hide-xs {
     display: none;
   }
 }

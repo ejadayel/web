@@ -28,7 +28,8 @@ document.documentElement.classList.add('js');
   items.forEach((el) => observer.observe(el));
 })();
 
-// Support form.
+// Support form. Its messages follow the page's language: the French pages under
+// fr/ share this script.
 (() => {
   const form = document.querySelector('form.contact-form');
   if (!form) return;
@@ -36,6 +37,7 @@ document.documentElement.classList.add('js');
   const status = form.querySelector('.form-status');
   const button = form.querySelector('button[type="submit"]');
   const startedAt = Date.now();
+  const fr = document.documentElement.lang === 'fr';
 
   // Links such as index.html?topic=delete#contact preselect the topic.
   const topic = new URLSearchParams(location.search).get('topic');
@@ -54,7 +56,7 @@ document.documentElement.classList.add('js');
 
     const data = Object.fromEntries(new FormData(form));
     button.disabled = true;
-    setStatus('Sending…');
+    setStatus(fr ? 'Envoi…' : 'Sending…');
 
     try {
       const response = await fetch(CONTACT_ENDPOINT, {
@@ -65,12 +67,16 @@ document.documentElement.classList.add('js');
       if (!response.ok) throw new Error(String(response.status));
       form.reset();
       setStatus(
-        'Thanks — your message is on its way. We usually reply within a couple of days.',
+        fr
+          ? 'Merci, votre message est en route. Nous répondons en général en un jour ou deux.'
+          : 'Thanks — your message is on its way. We usually reply within a couple of days.',
         'ok'
       );
     } catch {
       setStatus(
-        'Sorry, that did not send. Please check your connection and try again in a moment.',
+        fr
+          ? 'Désolé, le message n’est pas parti. Vérifiez votre connexion et réessayez dans un instant.'
+          : 'Sorry, that did not send. Please check your connection and try again in a moment.',
         'error'
       );
     } finally {
