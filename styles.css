@@ -608,6 +608,59 @@ section.block {
   box-shadow: var(--shadow-lg);
 }
 
+/* Apple Watch: two raw watch screens in a drawn case, one tucked behind. */
+
+.watch-pair {
+  position: relative;
+  width: min(340px, 100%);
+  aspect-ratio: 340 / 360;
+}
+
+.watch {
+  position: absolute;
+  width: 62%;
+  padding: 3.2%;
+  border-radius: 26% / 22%;
+  background: linear-gradient(145deg, #3a3d44, #121317 55%, #26282e);
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.14);
+}
+
+.watch img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22% / 18.5%;
+  background: #000;
+}
+
+.watch::after {
+  /* the Digital Crown */
+  content: '';
+  position: absolute;
+  right: -3.5%;
+  top: 24%;
+  width: 4%;
+  height: 15%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #2a2c31, #5c606a);
+}
+
+.watch-front {
+  left: 0;
+  bottom: 0;
+  transform: rotate(-4deg);
+  z-index: 1;
+}
+
+.watch-back {
+  right: 0;
+  top: 0;
+  transform: rotate(5deg) scale(0.9);
+  opacity: 0.92;
+}
+
 .feature-copy h3 {
   font-size: clamp(28px, 3.4vw, 38px);
   margin: 0 0 14px;
@@ -673,6 +726,9 @@ section.block {
   }
   .shot {
     width: min(280px, 80%);
+  }
+  .watch-pair {
+    width: min(300px, 86%);
   }
   .ticks {
     display: inline-block;
