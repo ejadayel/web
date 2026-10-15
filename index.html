@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily Ring · Build habits in one tap</title>
+    <meta
+      name="description"
+      content="Daily Ring is a simple, free habit tracker with no ads, no subscription and no sign-up. Tap a habit to check it off. Help, answers and contact."
+    />
+    <meta name="theme-color" content="#2f7fe8" />
+    <meta property="og:title" content="Daily Ring · Build habits in one tap" />
+    <meta
+      property="og:description"
+      content="A simple, free habit tracker. No ads, no subscription, no sign-up."
+    />
+    <meta property="og:image" content="images/today.jpg" />
+    <link rel="icon" href="icon.png" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="icon.png" alt="" />Daily Ring</a>
+        <nav aria-label="Main">
+          <a class="nav-hide-sm" href="#features">Features</a>
+          <a class="nav-hide-sm" href="#faq">Help</a>
+          <a href="privacy.html">Privacy</a>
+          <a class="nav-cta" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-copy">
+            <div class="pill-row">
+              <span class="pill">Free</span>
+              <span class="pill">No ads</span>
+              <span class="pill">No sign-up</span>
+            </div>
+            <h1 style="margin-top: 22px">
+              Build habits<br />in <span class="ring-word">one tap.</span>
+            </h1>
+            <p class="lede">
+              Daily Ring is the calm, simple way to show up for the things that matter. Tap a habit
+              to check it off, watch your streaks grow, and feel good about every day you close.
+            </p>
+            <div class="actions">
+              <a class="button button-light" href="#features">See how it works</a>
+              <a class="button button-ghost" href="#contact">Get in touch</a>
+            </div>
+            <p class="platforms">iPhone · iPad · Apple Watch · Android</p>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <img
+              class="phone phone-back"
+              src="images/dark.jpg"
+              alt=""
+              width="720"
+              height="1276"
+              fetchpriority="high"
+            />
+            <img
+              class="phone phone-front"
+              src="images/today.jpg"
+              alt=""
+              width="720"
+              height="1276"
+              fetchpriority="high"
+            />
+            <div class="float-chip chip-a">
+              <span class="dot" style="background: var(--c-green)">✓</span>Morning walk done
+            </div>
+            <div class="float-chip chip-b">
+              <span class="dot" style="background: var(--c-orange)">🔥</span>25 day streak
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="container">
+          <div class="stats-grid reveal">
+            <div class="stat"><strong>1 tap</strong><span>to check off a habit</span></div>
+            <div class="stat"><strong>0 ads</strong><span>and no subscription</span></div>
+            <div class="stat"><strong>0 sign-ups</strong><span>start in seconds</span></div>
+            <div class="stat"><strong>100%</strong><span>works offline</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <section class="block" id="features">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Why Daily Ring</span>
+            <h2>Small steps. Every day.</h2>
+            <p>Everything you need to build a habit, and nothing that gets in the way.</p>
+          </div>
+
+          <div class="feature reveal" style="--accent: var(--c-pink)">
+            <div class="feature-art">
+              <img
+                class="shot"
+                src="images/confetti.jpg"
+                alt="Today screen with every habit done and confetti falling"
+                width="720"
+                height="1276"
+                loading="lazy"
+              />
+            </div>
+            <div class="feature-copy">
+              <span class="icon-badge">🎉</span>
+              <h3>Every check-off feels good</h3>
+              <p>
+                A gentle tap, a cheerful sound, and confetti when you close out the day. Small
+                rewards that make you want to come back tomorrow.
+              </p>
+              <ul class="ticks">
+                <li>Haptics and sounds on every tap</li>
+                <li>A celebration when every habit is done</li>
+                <li>Plays nicely with your music</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature reveal" style="--accent: var(--c-purple)">
+            <div class="feature-art">
+              <img
+                class="shot"
+                src="images/progress.jpg"
+                alt="Progress screen with a 14-day chart and per-habit streak strips"
+                width="720"
+                height="1276"
+                loading="lazy"
+              />
+            </div>
+            <div class="feature-copy">
+              <span class="icon-badge">📈</span>
+              <h3>Watch your streaks grow</h3>
+              <p>
+                See your last 14 days at a glance: your consistency, your perfect days, and a streak
+                for every habit. Progress you can actually see is progress you keep.
+              </p>
+              <ul class="ticks">
+                <li>Consistency score and perfect days</li>
+                <li>A two-week strip for each habit</li>
+                <li>7-day challenges to push a little further</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature reveal" style="--accent: var(--c-blue)">
+            <div class="feature-art">
+              <img
+                class="shot"
+                src="images/widget.jpg"
+                alt="Home Screen with the Daily Ring widget showing today's habits"
+                width="720"
+                height="1276"
+                loading="lazy"
+              />
+            </div>
+            <div class="feature-copy">
+              <span class="icon-badge">📱</span>
+              <h3>Check off from your Home Screen</h3>
+              <p>
+                The interactive widget puts today's habits right where you look most. Tap a row to
+                log it without even opening the app.
+              </p>
+              <ul class="ticks">
+                <li>Interactive Home Screen widget</li>
+                <li>A companion app for Apple Watch</li>
+                <li>On iPhone and Android</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature reveal" style="--accent: var(--c-teal)">
+            <div class="feature-art">
+              <img
+                class="shot"
+                src="images/count.jpg"
+                alt="The add-habit form set up to count glasses of water"
+                width="720"
+                height="1276"
+                loading="lazy"
+              />
+            </div>
+            <div class="feature-copy">
+              <span class="icon-badge">💧</span>
+              <h3>Count what matters</h3>
+              <p>
+                Some habits are done once, others add up. Track 8 glasses of water, 20 pages or 3
+                sets of reps, or simply mark it done.
+              </p>
+              <ul class="ticks">
+                <li>Once-a-day or count-up habits</li>
+                <li>Pick an icon and a colour</li>
+                <li>Drag to reorder, everywhere at once</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="feature reveal" style="--accent: var(--c-amber)">
+            <div class="feature-art">
+              <img
+                class="shot"
+                src="images/reminders.jpg"
+                alt="A Daily Ring reminder banner saying what is left to do today"
+                width="720"
+                height="1276"
+                loading="lazy"
+              />
+            </div>
+            <div class="feature-copy">
+              <span class="icon-badge">🔔</span>
+              <h3>A gentle nudge, twice a day</h3>
+              <p>
+                Morning and evening reminders that know what's left, so a nudge always means
+                something. Pick the times; they stay on your device.
+              </p>
+              <ul class="ticks">
+                <li>Two reminders, at times you choose</li>
+                <li>They tell you what's still to do</li>
+                <li>No push servers, no tracking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- iPad band -->
+      <section class="block band">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Everywhere you are</span>
+            <h2>Beautiful on every screen</h2>
+            <p>
+              Two columns on iPad, a widget on your Home Screen, a tap on your wrist, and Light and
+              Dark Mode that are easy on the eyes, day or night.
+            </p>
+          </div>
+          <img
+            class="ipad reveal"
+            src="images/ipad.jpg"
+            alt="Daily Ring on iPad with habits laid out in two columns"
+            width="1500"
+            height="916"
+            loading="lazy"
+          />
+          <div class="device-row reveal">
+            <span class="pill">iPhone</span>
+            <span class="pill">iPad</span>
+            <span class="pill">Apple Watch</span>
+            <span class="pill">Android</span>
+            <span class="pill">Light &amp; Dark Mode</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values -->
+      <section class="block">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Made with care</span>
+            <h2>Simple, private, yours</h2>
+            <p>No catch. Just a habit tracker that respects your time and your data.</p>
+          </div>
+          <div class="cards">
+            <div class="value reveal" style="--accent: var(--c-green)">
+              <span class="icon-badge">🆓</span>
+              <h3>Free, with no ads</h3>
+              <p>No subscription, no paywall, no banners. Every feature, for everyone.</p>
+            </div>
+            <div class="value reveal" style="--accent: var(--c-blue)">
+              <span class="icon-badge">⚡️</span>
+              <h3>Start in seconds</h3>
+              <p>No sign-up screen. Open the app and check off your first habit right away.</p>
+            </div>
+            <div class="value reveal" style="--accent: var(--c-purple)">
+              <span class="icon-badge">✈️</span>
+              <h3>Works offline</h3>
+              <p>Everything works without a connection. Changes back up when you're next online.</p>
+            </div>
+            <div class="value reveal" style="--accent: var(--c-teal)">
+              <span class="icon-badge">☁️</span>
+              <h3>Safely backed up</h3>
+              <p>Your habits survive a lost phone. Add an email to use them on another device.</p>
+            </div>
+            <div class="value reveal" style="--accent: var(--c-pink)">
+              <span class="icon-badge">🔒</span>
+              <h3>No tracking</h3>
+              <p>
+                No analytics, no trackers, nothing sold or shared. Read our
+                <a href="privacy.html">privacy policy</a>.
+              </p>
+            </div>
+            <div class="value reveal" style="--accent: var(--c-orange)">
+              <span class="icon-badge">🗑️</span>
+              <h3>Leave any time</h3>
+              <p>
+                Delete your account and every habit with it, right from the app.
+                <a href="delete-account.html">How</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="block" id="faq" style="padding-top: 0">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Help</span>
+            <h2>Common questions</h2>
+          </div>
+          <div class="faq reveal">
+            <details>
+              <summary>Do I need an account?</summary>
+              <p>
+                No. The app backs up your habits to an anonymous account automatically. To use the
+                same habits on another device, or to keep them after changing phones, add an email
+                in
+                <strong>Habits → Account</strong>.
+              </p>
+            </details>
+            <details>
+              <summary>How do I move my habits to a new phone?</summary>
+              <p>
+                On your old phone, add an email in <strong>Habits → Account</strong>. On the new
+                phone, open the same screen and sign in with that email and password.
+              </p>
+            </details>
+            <details>
+              <summary>How do I set reminders?</summary>
+              <p>
+                Go to <strong>Habits → Reminders</strong>, turn them on and pick the times.
+                Reminders stay on your device, so allow notifications for Daily Ring in your phone’s
+                settings.
+              </p>
+            </details>
+            <details>
+              <summary>How do I reorder or edit habits?</summary>
+              <p>
+                On the <strong>Habits</strong> tab, touch and hold a habit, then drag it. The new
+                order appears on every screen. Tap <strong>Edit</strong> on a habit to rename it or
+                change its daily target.
+              </p>
+            </details>
+            <details>
+              <summary>Does it work offline?</summary>
+              <p>
+                Yes. Everything works offline, and changes are backed up when you are next online.
+              </p>
+            </details>
+            <details>
+              <summary>How do I delete my account?</summary>
+              <p>
+                In the app, go to <strong>Habits → Account → Delete account</strong>. If you no
+                longer have the app, see <a href="delete-account.html">Delete your account</a>.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="block" id="contact" style="padding-top: 0">
+        <div class="container">
+          <div class="contact reveal">
+            <div class="contact-aside">
+              <h2>Say hello</h2>
+              <p>
+                Questions, bugs or ideas — we read every message and usually reply within a couple
+                of days.
+              </p>
+              <ul>
+                <li><span>🐞</span><span>For a bug, tell us your device and app version.</span></li>
+                <li>
+                  <span>💡</span><span>Ideas are welcome. Small and simple ones especially.</span>
+                </li>
+                <li>
+                  <span>🔒</span
+                  ><span
+                    >Your message is emailed to us and not stored on any server.
+                    <a href="privacy.html#contact" style="color: #fff">Details</a>.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <form class="contact-form" method="post" novalidate>
+              <div class="field">
+                <label for="name">Name <span class="hint">(optional)</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" maxlength="100" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  required
+                />
+              </div>
+              <div class="field field-wide">
+                <label for="topic">Topic</label>
+                <select id="topic" name="topic">
+                  <option value="question">A question</option>
+                  <option value="bug">Something isn't working</option>
+                  <option value="idea">An idea</option>
+                  <option value="delete">Delete my account</option>
+                  <option value="privacy">A privacy request</option>
+                  <option value="other">Something else</option>
+                </select>
+              </div>
+              <div class="field field-wide">
+                <label for="device"
+                  >Device and app version <span class="hint">(optional)</span></label
+                >
+                <input
+                  id="device"
+                  name="device"
+                  type="text"
+                  maxlength="100"
+                  placeholder="e.g. iPhone 16, iOS 27, Daily Ring 1.0"
+                />
+              </div>
+              <div class="field field-wide">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  minlength="2"
+                  maxlength="5000"
+                  required
+                ></textarea>
+              </div>
+              <div class="field-trap" aria-hidden="true">
+                <label for="website">Leave this empty</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="form-foot">
+                <button class="button button-primary" type="submit">Send message</button>
+                <p class="note">
+                  We use your email only to reply. See the
+                  <a href="privacy.html#contact">privacy policy</a>.
+                </p>
+              </div>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="icon.png" alt="" />Daily Ring</a>
+        <nav aria-label="Footer">
+          <a href="#features">Features</a>
+          <a href="#faq">Help</a>
+          <a href="#contact">Contact</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="delete-account.html">Delete your account</a>
+        </nav>
+        <p class="copy">Made by an independent developer. Free, with no ads.</p>
+      </div>
+    </footer>
+  </body>
+</html>
