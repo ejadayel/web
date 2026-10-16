@@ -433,6 +433,18 @@ header.site nav a.lang {
   opacity: 0.96;
 }
 
+/* The watch rides in front of the phones, at the bottom-left corner. */
+.hero-art .hero-watch {
+  width: 204px;
+  left: -9%;
+  bottom: 48px;
+  z-index: 3;
+  transform: rotate(-8deg);
+  box-shadow:
+    0 30px 60px -18px rgba(5, 20, 60, 0.7),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.14);
+}
+
 .float-chip {
   position: absolute;
   z-index: 3;
@@ -480,6 +492,13 @@ header.site nav a.lang {
   }
 }
 
+@media (max-width: 1100px) {
+  .hero-art .hero-watch {
+    width: 176px;
+    left: -1%;
+  }
+}
+
 @media (max-width: 900px) {
   .hero .container {
     grid-template-columns: 1fr;
@@ -509,6 +528,11 @@ header.site nav a.lang {
   }
   .hero-art .phone-front {
     left: 4%;
+  }
+  .hero-art .hero-watch {
+    width: 140px;
+    left: -2%;
+    bottom: 24px;
   }
   .chip-a {
     left: 0;
