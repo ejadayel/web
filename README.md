@@ -12,4 +12,4 @@ Plain HTML, CSS and JavaScript — no build step. Edit a file, push to `main`, a
 
 The Edge Function itself lives in the app repo under `supabase/functions/contact/`.
 
-The site is in English and French. Each page links to its counterpart from the `EN`/`FR` switch in the header and from the footer, and declares both with `hreflang` alternates. A change to one language's copy goes into the other in the same commit. The French pages keep in-app labels such as **Habits → Account** in English, because the app itself is English only. The English privacy policy is the one that prevails, which the French version says.
+The site is in English and French. Each page links to its counterpart from the `EN`/`FR` switch in the header and from the footer, and declares both with `hreflang` alternates. A change to one language's copy goes into the other in the same commit. The app is in English and French too, so the French pages name in-app labels by their French text (**Habitudes → Compte**), and show French screenshots from `images/fr/`. The English privacy policy is the one that prevails, which the French version says.
