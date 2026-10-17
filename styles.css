@@ -154,6 +154,8 @@ header.site .container {
   font-weight: 700;
   font-size: 19px;
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  flex: none;
 }
 
 .brand img {
@@ -177,6 +179,7 @@ header.site nav a {
   padding: 8px 12px;
   border-radius: 999px;
   font-weight: 500;
+  white-space: nowrap;
   transition:
     color 0.2s,
     background 0.2s;
@@ -219,9 +222,6 @@ header.site nav a.lang {
 /* The language switch is a fourth item at phone width, so the nav tightens
    rather than letting the brand wrap. */
 @media (max-width: 440px) {
-  header.site .brand {
-    white-space: nowrap;
-  }
   header.site nav {
     gap: 2px;
     font-size: 14px;
@@ -239,6 +239,37 @@ header.site nav a.lang {
 @media (max-width: 380px) {
   header.site nav .nav-hide-xs {
     display: none;
+  }
+}
+
+/* French labels are longer ("Fonctionnalités", "Vie privée", "Obtenir l’app"),
+   so the same links drop out at wider widths. Nav links never wrap: a link that
+   breaks onto two lines in a 64px header is what these breakpoints prevent. */
+@media (max-width: 720px) {
+  header.site nav:lang(fr) .nav-hide-sm {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  header.site nav:lang(fr) .nav-hide-xs {
+    display: none;
+  }
+}
+
+/* The narrowest phones (320px) fit the brand, the call to action and the
+   language switch only with a slightly smaller wordmark. */
+@media (max-width: 340px) {
+  header.site .container {
+    gap: 8px;
+  }
+  .brand {
+    gap: 8px;
+    font-size: 17px;
+  }
+  .brand img {
+    width: 30px;
+    height: 30px;
   }
 }
 
