@@ -14,7 +14,16 @@
       property="og:description"
       content="A simple, free habit tracker. No ads, no subscription, no sign-up."
     />
-    <meta property="og:image" content="images/today.jpg" />
+    <meta property="og:image" content="https://ejadayel.github.io/web/images/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ejadayel.github.io/web/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://ejadayel.github.io/web/" />
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android", "applicationCategory": "HealthApplication", "description": "A simple, free habit tracker for iPhone, iPad, Apple Watch and Android. Tap a habit to check it off, keep your streaks going and see your progress.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/", "image": "https://ejadayel.github.io/web/images/og.jpg"}
+    </script>
     <link rel="icon" href="icon.png" />
     <link rel="apple-touch-icon" href="icon.png" />
     <link rel="stylesheet" href="styles.css" />
@@ -33,7 +42,8 @@
           <a class="nav-hide-sm" href="#features">Features</a>
           <a class="nav-hide-sm" href="#faq">Help</a>
           <a class="nav-hide-xs" href="privacy.html">Privacy</a>
-          <a class="nav-cta" href="#contact">Contact</a>
+          <a class="nav-hide-sm" href="#contact">Contact</a>
+          <a class="nav-cta" href="#download">Get the app</a>
           <a class="lang" href="fr/index.html" hreflang="fr" lang="fr" title="Français">FR</a>
         </nav>
       </div>
@@ -54,13 +64,20 @@
               Build habits<br />in <span class="ring-word">one tap.</span>
             </h1>
             <p class="lede">
-              Daily Ring is the calm, simple way to show up for the things that matter. Tap a habit
-              to check it off, watch your streaks grow, and feel good about every day you close.
+              Daily Ring makes good habits easy to keep. Tap a habit to check it off, watch your
+              streaks grow, and see your progress at a glance. Free, and ready in seconds.
             </p>
-            <div class="actions">
-              <a class="button button-light" href="#features">See how it works</a>
-              <a class="button button-ghost" href="#contact">Get in touch</a>
+            <div class="store-row" role="group" aria-label="Download Daily Ring">
+              <a class="store-badge is-soon" data-store="appStore" data-live="Download on the">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                <span><small>Coming soon to the</small>App Store</span>
+              </a>
+              <a class="store-badge is-soon" data-store="googlePlay" data-live="Get it on">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.2v15.6a.8.8 0 0 0 1.2.7l13-7.8a.8.8 0 0 0 0-1.4l-13-7.8A.8.8 0 0 0 7 4.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+                <span><small>Coming soon on</small>Google Play</span>
+              </a>
             </div>
+            <a class="hero-more" href="#how">See how it works <span aria-hidden="true">↓</span></a>
             <p class="platforms">iPhone · iPhone Duo · iPad · Apple Watch · Android</p>
           </div>
 
@@ -100,6 +117,37 @@
           </div>
         </div>
       </div>
+
+      <!-- How it works -->
+      <section class="block how" id="how">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">How it works</span>
+            <h2>Up and running in a minute</h2>
+            <p>No account and no setup. Open the app and your first habits are already there.</p>
+          </div>
+          <ol class="steps-row">
+            <li class="step reveal" style="--accent: var(--c-green)">
+              <span class="step-num" aria-hidden="true">1</span>
+              <span class="icon-badge" aria-hidden="true">🌱</span>
+              <h3>Pick your habits</h3>
+              <p>Keep the four examples or add your own: once a day, or a count like 8 glasses of water.</p>
+            </li>
+            <li class="step reveal" style="--accent: var(--c-blue)">
+              <span class="step-num" aria-hidden="true">2</span>
+              <span class="icon-badge" aria-hidden="true">👆</span>
+              <h3>Tap to check off</h3>
+              <p>One tap in the app, on your Home Screen widget or on your Apple Watch, with a cheerful sound to say well done.</p>
+            </li>
+            <li class="step reveal" style="--accent: var(--c-purple)">
+              <span class="step-num" aria-hidden="true">3</span>
+              <span class="icon-badge" aria-hidden="true">📈</span>
+              <h3>Watch your progress</h3>
+              <p>Streaks, a 14-day chart and 7-day challenges show how far you have come, and keep you coming back.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
 
       <!-- Features -->
       <section class="block" id="features">
@@ -352,6 +400,49 @@
         </div>
       </section>
 
+      <!-- Moments: what a day with the app looks like. Product moments, not quotes. -->
+      <section class="block">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Made for real days</span>
+            <h2>Small wins, all day long</h2>
+            <p>A few of the moments Daily Ring is built for.</p>
+          </div>
+          <ul class="moments">
+            <li class="moment reveal" style="--accent: var(--c-blue)">
+              <span class="icon-badge" aria-hidden="true">💧</span>
+              <h3>Eight glasses, one tap at a time</h3>
+              <p>Count your water as the day goes, and watch the bar fill up glass by glass.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-green)">
+              <span class="icon-badge" aria-hidden="true">⌚️</span>
+              <h3>Logged before you’re through the door</h3>
+              <p>Back from your morning walk? Tick it off on your Apple Watch, with your phone still in your pocket.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-teal)">
+              <span class="icon-badge" aria-hidden="true">📱</span>
+              <h3>Done without opening the app</h3>
+              <p>Tap a row on the Home Screen widget and it’s logged. That’s it.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-amber)">
+              <span class="icon-badge" aria-hidden="true">🔔</span>
+              <h3>A nudge that knows what’s left</h3>
+              <p>The evening reminder tells you what’s still to do, so it always means something.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-pink)">
+              <span class="icon-badge" aria-hidden="true">🎉</span>
+              <h3>The whole day, closed</h3>
+              <p>Check off the last habit and the confetti falls. A small celebration you earned.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-orange)">
+              <span class="icon-badge" aria-hidden="true">🔥</span>
+              <h3>A streak worth protecting</h3>
+              <p>Watch the days add up, then take on a 7-day challenge to push a little further.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <!-- Values -->
       <section class="block">
         <div class="container">
@@ -404,6 +495,38 @@
         </div>
       </section>
 
+      <!-- Reviews: filled by site.js from REVIEWS, and hidden while there are none. -->
+      <section class="block" id="reviews" style="padding-top: 0" hidden>
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Reviews</span>
+            <h2>What people are saying</h2>
+          </div>
+          <ul class="reviews"></ul>
+        </div>
+      </section>
+
+      <!-- Download -->
+      <section class="block" id="download" style="padding-top: 0">
+        <div class="container">
+          <div class="cta reveal">
+            <img class="cta-icon" src="icon.png" alt="" width="96" height="96" loading="lazy" />
+            <h2>Start your first streak today</h2>
+            <p>Free, with no ads, no subscription and no sign-up. On iPhone, iPad, Apple Watch and Android.</p>
+            <div class="store-row" role="group" aria-label="Download Daily Ring">
+              <a class="store-badge is-soon" data-store="appStore" data-live="Download on the">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                <span><small>Coming soon to the</small>App Store</span>
+              </a>
+              <a class="store-badge is-soon" data-store="googlePlay" data-live="Get it on">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.2v15.6a.8.8 0 0 0 1.2.7l13-7.8a.8.8 0 0 0 0-1.4l-13-7.8A.8.8 0 0 0 7 4.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+                <span><small>Coming soon on</small>Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- FAQ -->
       <section class="block" id="faq" style="padding-top: 0">
         <div class="container">
@@ -412,6 +535,10 @@
             <h2>Common questions</h2>
           </div>
           <div class="faq reveal">
+            <details>
+              <summary>Is Daily Ring really free?</summary>
+              <p>Yes. Every feature is free for everyone, with no ads, no subscription, no in-app purchases and no paywall.</p>
+            </details>
             <details>
               <summary>Is Daily Ring available in French?</summary>
               <p>

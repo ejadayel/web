@@ -14,7 +14,16 @@
       property="og:description"
       content="Un suivi d’habitudes simple et gratuit. Sans publicité, sans abonnement, sans inscription."
     />
-    <meta property="og:image" content="../images/fr/today.jpg" />
+    <meta property="og:image" content="https://ejadayel.github.io/web/images/fr/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ejadayel.github.io/web/fr/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://ejadayel.github.io/web/fr/" />
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android", "applicationCategory": "HealthApplication", "description": "Un suivi d’habitudes simple et gratuit pour iPhone, iPad, Apple Watch et Android. Touchez une habitude pour la cocher, gardez vos séries et suivez vos progrès.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/fr/", "image": "https://ejadayel.github.io/web/images/fr/og.jpg"}
+    </script>
     <meta property="og:locale" content="fr_FR" />
     <link rel="icon" href="../icon.png" />
     <link rel="apple-touch-icon" href="../icon.png" />
@@ -34,7 +43,8 @@
           <a class="nav-hide-sm" href="#features">Fonctionnalités</a>
           <a class="nav-hide-sm" href="#faq">Aide</a>
           <a class="nav-hide-xs" href="privacy.html">Vie privée</a>
-          <a class="nav-cta" href="#contact">Contact</a>
+          <a class="nav-hide-sm" href="#contact">Contact</a>
+          <a class="nav-cta" href="#download">Obtenir l’app</a>
           <a class="lang" href="../index.html" hreflang="en" lang="en" title="English">EN</a>
         </nav>
       </div>
@@ -55,14 +65,21 @@
               De bonnes habitudes<br />en <span class="ring-word">un geste.</span>
             </h1>
             <p class="lede">
-              Daily Ring est la façon simple et sereine de vous consacrer à ce qui compte. Touchez
-              une habitude pour la cocher, regardez vos séries grandir et savourez chaque journée
-              bouclée.
+              Daily Ring rend les bonnes habitudes faciles à tenir. Touchez une habitude pour la
+              cocher, regardez vos séries grandir et suivez vos progrès d’un coup d’œil. Gratuit,
+              et prêt en quelques secondes.
             </p>
-            <div class="actions">
-              <a class="button button-light" href="#features">Découvrir l’app</a>
-              <a class="button button-ghost" href="#contact">Nous écrire</a>
+            <div class="store-row" role="group" aria-label="Télécharger Daily Ring">
+              <a class="store-badge is-soon" data-store="appStore" data-live="Télécharger dans l’">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                <span><small>Bientôt dans l’</small>App Store</span>
+              </a>
+              <a class="store-badge is-soon" data-store="googlePlay" data-live="Disponible sur">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.2v15.6a.8.8 0 0 0 1.2.7l13-7.8a.8.8 0 0 0 0-1.4l-13-7.8A.8.8 0 0 0 7 4.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+                <span><small>Bientôt sur</small>Google Play</span>
+              </a>
             </div>
+            <a class="hero-more" href="#how">Découvrir comment ça marche <span aria-hidden="true">↓</span></a>
             <p class="platforms">iPhone · iPhone Duo · iPad · Apple Watch · Android</p>
           </div>
 
@@ -110,6 +127,37 @@
           </div>
         </div>
       </div>
+
+      <!-- How it works -->
+      <section class="block how" id="how">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Comment ça marche</span>
+            <h2>Prêt en une minute</h2>
+            <p>Pas de compte, rien à configurer. Ouvrez l’app : vos premières habitudes vous attendent déjà.</p>
+          </div>
+          <ol class="steps-row">
+            <li class="step reveal" style="--accent: var(--c-green)">
+              <span class="step-num" aria-hidden="true">1</span>
+              <span class="icon-badge" aria-hidden="true">🌱</span>
+              <h3>Choisissez vos habitudes</h3>
+              <p>Gardez les quatre exemples ou ajoutez les vôtres : une fois par jour, ou un compte comme 8 verres d’eau.</p>
+            </li>
+            <li class="step reveal" style="--accent: var(--c-blue)">
+              <span class="step-num" aria-hidden="true">2</span>
+              <span class="icon-badge" aria-hidden="true">👆</span>
+              <h3>Touchez pour cocher</h3>
+              <p>Un geste dans l’app, sur le widget de l’écran d’accueil ou sur votre Apple Watch, et un petit son pour vous féliciter.</p>
+            </li>
+            <li class="step reveal" style="--accent: var(--c-purple)">
+              <span class="step-num" aria-hidden="true">3</span>
+              <span class="icon-badge" aria-hidden="true">📈</span>
+              <h3>Suivez vos progrès</h3>
+              <p>Séries, graphique sur 14 jours et défis de 7 jours : voyez le chemin parcouru, et gardez l’envie de revenir.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
 
       <!-- Features -->
       <section class="block" id="features">
@@ -365,6 +413,49 @@
         </div>
       </section>
 
+      <!-- Moments: what a day with the app looks like. Product moments, not quotes. -->
+      <section class="block">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Pour la vraie vie</span>
+            <h2>De petites victoires, toute la journée</h2>
+            <p>Quelques-uns des moments pour lesquels Daily Ring est conçue.</p>
+          </div>
+          <ul class="moments">
+            <li class="moment reveal" style="--accent: var(--c-blue)">
+              <span class="icon-badge" aria-hidden="true">💧</span>
+              <h3>Huit verres, un geste à la fois</h3>
+              <p>Comptez vos verres d’eau au fil de la journée et regardez la barre se remplir.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-green)">
+              <span class="icon-badge" aria-hidden="true">⌚️</span>
+              <h3>Cochée avant d’avoir passé la porte</h3>
+              <p>De retour de votre marche matinale ? Cochez-la sur votre Apple Watch, le téléphone dans la poche.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-teal)">
+              <span class="icon-badge" aria-hidden="true">📱</span>
+              <h3>Fait sans ouvrir l’app</h3>
+              <p>Touchez une ligne du widget de l’écran d’accueil : c’est noté. C’est tout.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-amber)">
+              <span class="icon-badge" aria-hidden="true">🔔</span>
+              <h3>Un rappel qui sait ce qu’il reste</h3>
+              <p>Le rappel du soir vous dit ce qu’il reste à faire : il tombe toujours à propos.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-pink)">
+              <span class="icon-badge" aria-hidden="true">🎉</span>
+              <h3>La journée entière, bouclée</h3>
+              <p>Cochez la dernière habitude et les confettis tombent. Une petite fête bien méritée.</p>
+            </li>
+            <li class="moment reveal" style="--accent: var(--c-orange)">
+              <span class="icon-badge" aria-hidden="true">🔥</span>
+              <h3>Une série à protéger</h3>
+              <p>Regardez les jours s’additionner, puis relevez un défi de 7 jours pour aller un peu plus loin.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <!-- Values -->
       <section class="block">
         <div class="container">
@@ -423,6 +514,38 @@
         </div>
       </section>
 
+      <!-- Reviews: filled by site.js from REVIEWS, and hidden while there are none. -->
+      <section class="block" id="reviews" style="padding-top: 0" hidden>
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Avis</span>
+            <h2>Ce qu’ils en disent</h2>
+          </div>
+          <ul class="reviews"></ul>
+        </div>
+      </section>
+
+      <!-- Download -->
+      <section class="block" id="download" style="padding-top: 0">
+        <div class="container">
+          <div class="cta reveal">
+            <img class="cta-icon" src="../icon.png" alt="" width="96" height="96" loading="lazy" />
+            <h2>Commencez votre première série aujourd’hui</h2>
+            <p>Gratuit, sans pub, sans abonnement et sans inscription. Sur iPhone, iPad, Apple Watch et Android.</p>
+            <div class="store-row" role="group" aria-label="Télécharger Daily Ring">
+              <a class="store-badge is-soon" data-store="appStore" data-live="Télécharger dans l’">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                <span><small>Bientôt dans l’</small>App Store</span>
+              </a>
+              <a class="store-badge is-soon" data-store="googlePlay" data-live="Disponible sur">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.2v15.6a.8.8 0 0 0 1.2.7l13-7.8a.8.8 0 0 0 0-1.4l-13-7.8A.8.8 0 0 0 7 4.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg>
+                <span><small>Bientôt sur</small>Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- FAQ -->
       <section class="block" id="faq" style="padding-top: 0">
         <div class="container">
@@ -431,6 +554,10 @@
             <h2>Questions fréquentes</h2>
           </div>
           <div class="faq reveal">
+            <details>
+              <summary>Daily Ring est-elle vraiment gratuite ?</summary>
+              <p>Oui. Toutes les fonctionnalités sont gratuites pour tout le monde : sans pub, sans abonnement, sans achat intégré et sans accès payant.</p>
+            </details>
             <details>
               <summary>L’app est-elle en français ?</summary>
               <p>

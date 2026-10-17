@@ -189,13 +189,16 @@ header.site nav a[aria-current='page'] {
 }
 
 header.site nav a.nav-cta {
-  background: var(--brand);
+  background: linear-gradient(160deg, var(--brand-light), var(--brand) 60%);
   color: #fff;
+  font-weight: 600;
   margin-left: 4px;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px -10px rgba(47, 127, 232, 0.9);
 }
 
 header.site nav a.nav-cta:hover {
-  background: var(--brand-deep);
+  background: linear-gradient(160deg, var(--brand), var(--brand-deep));
   color: #fff;
 }
 
@@ -274,22 +277,6 @@ header.site nav a.lang {
   background: var(--brand-deep);
 }
 
-.button-light {
-  background: #fff;
-  color: var(--brand-deep);
-  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.45);
-}
-
-.button-ghost {
-  background: rgba(255, 255, 255, 0.16);
-  color: #fff;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
-}
-
-.button-ghost:hover {
-  background: rgba(255, 255, 255, 0.26);
-}
-
 .pill-row {
   display: flex;
   flex-wrap: wrap;
@@ -317,6 +304,88 @@ header.site nav a.lang {
   text-transform: uppercase;
   color: var(--brand);
   margin-bottom: 12px;
+}
+
+/* Store badges. Each is an <a> with no href until site.js has a store URL for
+   it, so a "coming soon" badge is plain text: not focusable, not a dead link.
+   Neutral glyphs rather than the stores' logos, which only their official
+   badge artwork may carry; swap that artwork in once the listings are live. */
+
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 196px;
+  padding: 11px 22px 11px 16px;
+  border-radius: 16px;
+  background: #0b0d12;
+  color: #fff;
+  text-decoration: none;
+  box-shadow:
+    0 14px 30px -14px rgba(5, 12, 30, 0.75),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.store-badge svg {
+  flex: none;
+  width: 28px;
+  height: 28px;
+}
+
+.store-badge span {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.store-badge small {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.store-badge[href]:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 20px 36px -14px rgba(5, 12, 30, 0.85),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.26);
+}
+
+.store-badge.is-soon {
+  cursor: default;
+}
+
+.hero .store-row {
+  margin-top: 30px;
+}
+
+.hero-more {
+  display: inline-block;
+  margin-top: 18px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.hero-more:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 /* ---------- Hero ---------- */
@@ -386,13 +455,6 @@ header.site nav a.lang {
   color: rgba(255, 255, 255, 0.9);
   max-width: 34em;
   margin: 0 0 28px;
-}
-
-.hero .actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 28px 0 0;
 }
 
 .hero .platforms {
@@ -550,7 +612,7 @@ header.site nav a.lang {
     margin-right: auto;
   }
   .hero .pill-row,
-  .hero .actions {
+  .hero .store-row {
     justify-content: center;
   }
   .hero-copy {
@@ -585,11 +647,11 @@ header.site nav a.lang {
   }
   .chip-a {
     left: 0;
-    top: 30px;
+    top: 0;
   }
   .chip-b {
     right: 0;
-    top: 62px;
+    top: 66px;
   }
 }
 
@@ -843,6 +905,171 @@ section.block {
   }
 }
 
+/* How it works: three numbered cards. */
+
+.how {
+  padding-bottom: 24px;
+}
+
+.steps-row {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1020px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step {
+  position: relative;
+  padding: 32px 28px 28px;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(
+      260px 160px at 100% 0%,
+      color-mix(in srgb, var(--accent) 14%, transparent),
+      transparent 70%
+    ),
+    var(--bg-elev);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-num {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  color: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.step h3 {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+@media (max-width: 820px) {
+  .steps-row {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+}
+
+/* Moments: six small scenes from a day with the app, in a 3-2-1 grid. */
+
+.moments {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.moment {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+/* A thin accent line along the top edge, in the moment's habit colour. */
+.moment::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 30%, transparent)
+  );
+}
+
+.moment h3 {
+  font-size: 21px;
+  margin: 0 0 8px;
+}
+
+.moment p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .moments {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .moments {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reviews: real ones only, rendered by site.js from REVIEWS. */
+
+.reviews {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1020px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.review-stars {
+  margin: 0 0 12px;
+  color: var(--c-amber);
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+.review blockquote {
+  flex: 1;
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.review-who {
+  margin: 0;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.review-who span {
+  display: block;
+  font-weight: 500;
+  color: var(--muted);
+}
+
 /* iPad band */
 
 .band {
@@ -964,6 +1191,74 @@ section.block {
 @media (max-width: 560px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Download call to action ---------- */
+
+.cta {
+  position: relative;
+  overflow: hidden;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 64px 32px;
+  border-radius: 32px;
+  text-align: center;
+  color: #fff;
+  background:
+    radial-gradient(520px 300px at 0% 100%, rgba(233, 61, 130, 0.42), transparent 60%),
+    radial-gradient(520px 300px at 100% 0%, rgba(142, 78, 198, 0.45), transparent 60%),
+    linear-gradient(160deg, var(--brand-light), var(--brand) 45%, var(--brand-deep));
+  box-shadow: var(--shadow-lg);
+}
+
+/* A faint ring behind the copy, after the app's own glyph. */
+.cta::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 56px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.cta > * {
+  position: relative;
+}
+
+.cta-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 22px;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px -16px rgba(5, 12, 30, 0.7);
+}
+
+.cta h2 {
+  font-size: clamp(30px, 4.4vw, 46px);
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.cta p {
+  max-width: 34em;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cta .store-row {
+  justify-content: center;
+}
+
+@media (max-width: 560px) {
+  .cta {
+    padding: 48px 20px;
+    border-radius: 26px;
   }
 }
 
