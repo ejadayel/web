@@ -39,8 +39,11 @@
   color-scheme: light dark;
 }
 
+/* Dark follows the system unless the theme switch pins one (data-theme on
+   <html>, set before first paint by the inline script in each page's head).
+   The two dark blocks are the same tokens and change together. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --brand: #4c93f0;
     --bg: #07090d;
     --bg-elev: #12151c;
@@ -54,6 +57,26 @@
     --shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.7), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
     --header-bg: rgba(7, 9, 13, 0.7);
   }
+}
+
+:root[data-theme='dark'] {
+  --brand: #4c93f0;
+  --bg: #07090d;
+  --bg-elev: #12151c;
+  --surface: #181c25;
+  --text: #eef0f4;
+  --muted: #a2a9b6;
+  --border: rgba(255, 255, 255, 0.08);
+  --danger: #f06a6e;
+  --ok: #4cc38a;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.7), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  --header-bg: rgba(7, 9, 13, 0.7);
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
 }
 
 /* ---------- Base ---------- */
@@ -213,15 +236,25 @@ header.site nav a.lang {
   box-shadow: inset 0 0 0 1px var(--border);
 }
 
-@media (max-width: 640px) {
+/* Header links drop out as the window narrows, never wrap: a link broken onto
+   two lines in a 64px header is what these breakpoints prevent. French labels
+   are longer ("Fonctionnalités", "Vie privée", "Obtenir l’app"), so French
+   pages drop each link at a wider width. The footer carries every link too. */
+@media (max-width: 690px) {
   header.site nav .nav-hide-sm {
     display: none;
   }
 }
 
-/* The language switch is a fourth item at phone width, so the nav tightens
-   rather than letting the brand wrap. */
-@media (max-width: 440px) {
+@media (max-width: 760px) {
+  header.site nav:lang(fr) .nav-hide-sm {
+    display: none;
+  }
+}
+
+/* The call to action, theme and language switches stay at phone width, so the
+   nav tightens rather than squeezing the brand. */
+@media (max-width: 480px) {
   header.site nav {
     gap: 2px;
     font-size: 14px;
@@ -230,47 +263,151 @@ header.site nav a.lang {
     padding: 7px 9px;
   }
   header.site nav a.nav-cta,
-  header.site nav a.lang {
+  header.site nav a.lang,
+  header.site nav .theme-toggle {
     margin-left: 2px;
   }
 }
 
-/* The footer carries the privacy policy too, so the header can drop it. */
-@media (max-width: 380px) {
+@media (max-width: 420px) {
   header.site nav .nav-hide-xs {
     display: none;
   }
 }
 
-/* French labels are longer ("Fonctionnalités", "Vie privée", "Obtenir l’app"),
-   so the same links drop out at wider widths. Nav links never wrap: a link that
-   breaks onto two lines in a 64px header is what these breakpoints prevent. */
-@media (max-width: 720px) {
-  header.site nav:lang(fr) .nav-hide-sm {
-    display: none;
-  }
-}
-
-@media (max-width: 400px) {
+@media (max-width: 440px) {
   header.site nav:lang(fr) .nav-hide-xs {
     display: none;
   }
 }
 
-/* The narrowest phones (320px) fit the brand, the call to action and the
-   language switch only with a slightly smaller wordmark. */
-@media (max-width: 340px) {
-  header.site .container {
-    gap: 8px;
+/* The narrowest phones keep the icon and let the name go, which screen
+   readers still announce. */
+@media (max-width: 360px) {
+  header.site .brand-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
   }
-  .brand {
-    gap: 8px;
-    font-size: 17px;
-  }
-  .brand img {
-    width: 30px;
-    height: 30px;
-  }
+}
+
+/* Theme switch: Automatic, Light or Dark, as in the app's Settings. Hidden
+   without JS, since site.js is what makes it do anything. */
+header.site nav .theme-toggle {
+  display: none;
+}
+
+html.theme-js header.site nav .theme-toggle {
+  display: grid;
+}
+
+.theme-switch {
+  position: relative;
+  display: flex;
+}
+
+header.site nav .theme-toggle {
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  box-shadow: inset 0 0 0 1px var(--border);
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+header.site nav .theme-toggle:hover,
+header.site nav .theme-toggle[aria-expanded='true'] {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.theme-menu {
+  position: absolute;
+  z-index: 60;
+  right: 0;
+  top: calc(100% + 12px);
+  min-width: 200px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  transform-origin: top right;
+  animation: picker-in 0.16s ease-out;
+}
+
+.theme-menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px 8px 8px;
+  border-radius: 11px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.theme-menu li:hover,
+.theme-menu li:focus {
+  outline: none;
+  background: var(--surface);
+}
+
+.theme-menu .theme-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.theme-menu li[aria-checked='true'] {
+  font-weight: 650;
+}
+
+.theme-menu li[aria-checked='true'] .theme-icon {
+  color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 14%, transparent);
+}
+
+.theme-menu .theme-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.theme-menu .theme-check {
+  width: 17px;
+  height: 17px;
+  margin-left: auto;
+  padding-left: 8px;
+  box-sizing: content-box;
+  color: var(--brand);
+  opacity: 0;
+}
+
+.theme-menu li[aria-checked='true'] .theme-check {
+  opacity: 1;
 }
 
 /* ---------- Buttons and pills ---------- */
@@ -1981,7 +2118,8 @@ footer.site .copy {
   html {
     scroll-behavior: auto;
   }
-  .picker-list {
+  .picker-list,
+  .theme-menu {
     animation: none;
   }
   .js .reveal {

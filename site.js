@@ -1,5 +1,7 @@
-// Daily Ring site: scroll reveal and the support form. No cookies, no storage,
-// no analytics — the form's fields go to the contact function and nowhere else.
+// Daily Ring site: scroll reveal, the theme switch and the support form. No
+// cookies and no analytics; the only thing kept is a pinned theme, in this
+// browser's localStorage. The form's fields go to the contact function and
+// nowhere else.
 
 // The Supabase Edge Function in supabase/functions/contact. The project URL is
 // already public (it ships in the app), and the function needs no key.
@@ -23,6 +25,10 @@ const REVIEWS = {
 };
 
 document.documentElement.classList.add('js');
+
+// Line icons, drawn in currentColor.
+const svg = (paths, className) =>
+  `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
 
 // Reviews: render this page's list, before the scroll reveal starts observing.
 (() => {
@@ -69,6 +75,121 @@ document.querySelectorAll('.store-badge[data-store]').forEach((badge) => {
   badge.classList.remove('is-soon');
   badge.querySelector('small').textContent = badge.dataset.live;
 });
+
+// Theme switch: Automatic follows the system, Light and Dark pin it, as in the
+// app's Settings. The choice is remembered in this browser only (the inline
+// script in each page's head reads it back before first paint).
+(() => {
+  const toggle = document.querySelector('.theme-toggle');
+  if (!toggle) return;
+  const KEY = 'daily-ring-theme';
+  const root = document.documentElement;
+  const labels =
+    root.lang === 'fr'
+      ? { title: 'Thème\u00a0:', system: 'Automatique', light: 'Clair', dark: 'Sombre' }
+      : { title: 'Theme:', system: 'Automatic', light: 'Light', dark: 'Dark' };
+  const icons = {
+    system:
+      '<circle cx="12" cy="12" r="8.5" /><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor" />',
+    light:
+      '<circle cx="12" cy="12" r="4" /><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4" />',
+    dark: '<path d="M19.5 14.6A8 8 0 0 1 9.4 4.5a8 8 0 1 0 10.1 10.1Z" />',
+  };
+  const values = ['system', 'light', 'dark'];
+  const current = () => root.dataset.theme || 'system';
+
+  const wrap = document.createElement('span');
+  wrap.className = 'theme-switch';
+  toggle.replaceWith(wrap);
+  wrap.append(toggle);
+
+  const menu = document.createElement('ul');
+  menu.className = 'theme-menu';
+  menu.id = 'theme-menu';
+  menu.setAttribute('role', 'menu');
+  menu.setAttribute('aria-label', toggle.getAttribute('aria-label'));
+  menu.hidden = true;
+  toggle.setAttribute('aria-controls', menu.id);
+  const items = values.map((value) => {
+    const li = document.createElement('li');
+    li.setAttribute('role', 'menuitemradio');
+    li.tabIndex = -1;
+    li.dataset.value = value;
+    li.innerHTML = `<span class="theme-icon">${svg(icons[value], '')}</span>`;
+    li.append(labels[value]);
+    li.insertAdjacentHTML('beforeend', svg('<path d="m5 12.5 4.5 4.5L19 7.5" />', 'theme-check'));
+    li.addEventListener('click', () => choose(value));
+    menu.append(li);
+    return li;
+  });
+  wrap.append(menu);
+
+  function render() {
+    const value = current();
+    toggle.innerHTML = svg(icons[value], '');
+    toggle.setAttribute('aria-label', `${labels.title} ${labels[value]}`);
+    toggle.title = `${labels.title} ${labels[value]}`;
+    items.forEach((li) => li.setAttribute('aria-checked', String(li.dataset.value === value)));
+  }
+
+  function choose(value) {
+    if (value === 'system') delete root.dataset.theme;
+    else root.dataset.theme = value;
+    try {
+      if (value === 'system') localStorage.removeItem(KEY);
+      else localStorage.setItem(KEY, value);
+    } catch {
+      // Storage blocked (a private window): the choice holds for this page only.
+    }
+    render();
+    close();
+  }
+
+  function open() {
+    menu.hidden = false;
+    toggle.setAttribute('aria-expanded', 'true');
+    items[values.indexOf(current())].focus();
+  }
+
+  function close(refocus = true) {
+    if (menu.hidden) return;
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    if (refocus) toggle.focus();
+  }
+
+  toggle.addEventListener('click', () => (menu.hidden ? open() : close()));
+  toggle.addEventListener('keydown', (event) => {
+    if (['ArrowDown', 'ArrowUp'].includes(event.key)) {
+      event.preventDefault();
+      open();
+    }
+  });
+  menu.addEventListener('keydown', (event) => {
+    const i = items.indexOf(document.activeElement);
+    const move = (to) => items[(to + items.length) % items.length].focus();
+    const keys = {
+      ArrowDown: () => move(i + 1),
+      ArrowUp: () => move(i - 1),
+      Home: () => move(0),
+      End: () => move(items.length - 1),
+      Enter: () => choose(values[i]),
+      ' ': () => choose(values[i]),
+      Escape: () => close(),
+    };
+    if (keys[event.key]) {
+      event.preventDefault();
+      keys[event.key]();
+    } else if (event.key === 'Tab') {
+      close(false);
+    }
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!wrap.contains(event.target)) close(false);
+  });
+
+  render();
+})();
 
 // Reveal sections as they scroll in.
 (() => {
@@ -122,9 +243,6 @@ const TOPIC_ICONS = {
     '<path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 20.5l1-4.4A8.5 8.5 0 1 1 20.5 12Z" /><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" />',
   ],
 };
-
-const svg = (paths, className) =>
-  `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
 
 function iconTile(value) {
   const [accent, paths] = TOPIC_ICONS[value] || TOPIC_ICONS.other;

@@ -9,6 +9,14 @@
       content="Ce que Daily Ring collecte, pourquoi, qui le traite et comment le supprimer."
     />
     <meta name="theme-color" content="#2f7fe8" />
+    <script>
+      // Before first paint, so a pinned theme never flashes the other one. site.js draws the switch.
+      document.documentElement.classList.add('theme-js');
+      try {
+        var theme = localStorage.getItem('daily-ring-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
     <link rel="icon" href="../icon.png" />
     <link rel="apple-touch-icon" href="../icon.png" />
     <link rel="stylesheet" href="../styles.css" />
@@ -22,13 +30,14 @@
 
     <header class="site">
       <div class="container">
-        <a class="brand" href="index.html"><img src="../icon.png" alt="" />Daily Ring</a>
+        <a class="brand" href="index.html"><img src="../icon.png" alt="" /><span class="brand-name">Daily Ring</span></a>
         <nav aria-label="Menu principal">
           <a class="nav-hide-sm" href="index.html#features">Fonctionnalités</a>
           <a class="nav-hide-sm" href="index.html#faq">Aide</a>
           <a class="nav-hide-xs" href="privacy.html" aria-current="page">Vie privée</a>
           <a class="nav-hide-sm" href="index.html#contact">Contact</a>
           <a class="nav-cta" href="index.html#download">Obtenir l’app</a>
+          <button class="theme-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Thème"></button>
           <a class="lang" href="../privacy.html" hreflang="en" lang="en" title="English">EN</a>
         </nav>
       </div>
@@ -150,7 +159,9 @@
           <strong>Envoyer</strong>, ces informations sont transmises à notre service d’envoi de
           courriels et arrivent dans notre boîte de réception sous forme de courriel, pour que nous
           puissions vous répondre. Le formulaire ne les enregistre dans aucune base de données, et
-          ce site n’utilise ni cookies ni statistiques.
+          ce site n’utilise ni cookies ni statistiques. Si vous choisissez ici un thème clair ou
+          sombre, ce choix est enregistré dans votre navigateur pour que la page suivante s’ouvre de
+          la même façon ; il ne nous est jamais transmis, et choisir Automatique l’efface.
         </p>
         <p>
           Nous gardons le courriel le temps nécessaire pour traiter votre message, et vous pouvez

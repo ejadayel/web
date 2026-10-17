@@ -9,6 +9,14 @@
       content="Daily Ring is a simple, free habit tracker with no ads, no subscription and no sign-up. Tap a habit to check it off. Help, answers and contact."
     />
     <meta name="theme-color" content="#2f7fe8" />
+    <script>
+      // Before first paint, so a pinned theme never flashes the other one. site.js draws the switch.
+      document.documentElement.classList.add('theme-js');
+      try {
+        var theme = localStorage.getItem('daily-ring-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
     <meta property="og:title" content="Daily Ring · Build habits in one tap" />
     <meta
       property="og:description"
@@ -37,13 +45,14 @@
 
     <header class="site">
       <div class="container">
-        <a class="brand" href="index.html"><img src="icon.png" alt="" />Daily Ring</a>
+        <a class="brand" href="index.html"><img src="icon.png" alt="" /><span class="brand-name">Daily Ring</span></a>
         <nav aria-label="Main">
           <a class="nav-hide-sm" href="#features">Features</a>
           <a class="nav-hide-sm" href="#faq">Help</a>
           <a class="nav-hide-xs" href="privacy.html">Privacy</a>
           <a class="nav-hide-sm" href="#contact">Contact</a>
           <a class="nav-cta" href="#download">Get the app</a>
+          <button class="theme-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Theme"></button>
           <a class="lang" href="fr/index.html" hreflang="fr" lang="fr" title="Français">FR</a>
         </nav>
       </div>
