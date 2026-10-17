@@ -426,11 +426,40 @@ header.site nav a.lang {
   transform: rotate(-4deg);
 }
 
-.hero-art .phone-back {
-  right: 2%;
-  bottom: -90px;
+/* The folded iPhone Duo: its raw cover screen in a drawn case, behind the
+   phone on the right. The hinge runs down its left edge. */
+.hero-art .hero-duo {
+  position: absolute;
+  width: 240px;
+  right: -9%;
+  bottom: 40px;
+  padding: 9px;
+  border-radius: 40px;
+  background: linear-gradient(145deg, #3a3d44, #121317 55%, #26282e);
+  box-shadow:
+    0 40px 80px -24px rgba(5, 20, 60, 0.6),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.14);
   transform: rotate(6deg);
-  opacity: 0.96;
+}
+
+.hero-duo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 31px;
+  background: #000;
+}
+
+.hero-duo::before {
+  /* the hinge */
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 30px;
+  bottom: 30px;
+  width: 7px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #5c606a, #2a2c31);
 }
 
 /* The watch rides in front of the phones, at the bottom-left corner. */
@@ -477,8 +506,8 @@ header.site nav a.lang {
 }
 
 .chip-b {
-  top: 210px;
-  right: -2%;
+  top: 112px;
+  right: -6%;
   animation-delay: -3s;
 }
 
@@ -496,6 +525,16 @@ header.site nav a.lang {
   .hero-art .hero-watch {
     width: 176px;
     left: -1%;
+  }
+  .hero-art .phone {
+    width: 264px;
+  }
+  .hero-art .phone-front {
+    left: 4%;
+  }
+  .hero-art .hero-duo {
+    width: 214px;
+    right: -3%;
   }
 }
 
@@ -529,6 +568,16 @@ header.site nav a.lang {
   .hero-art .phone-front {
     left: 4%;
   }
+  .hero-art .hero-duo {
+    width: 206px;
+    right: 0;
+    bottom: 28px;
+    padding: 7px;
+    border-radius: 31px;
+  }
+  .hero-duo img {
+    border-radius: 24px;
+  }
   .hero-art .hero-watch {
     width: 140px;
     left: -2%;
@@ -540,7 +589,7 @@ header.site nav a.lang {
   }
   .chip-b {
     right: 0;
-    top: 150px;
+    top: 62px;
   }
 }
 
