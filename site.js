@@ -91,6 +91,204 @@ document.querySelectorAll('.store-badge[data-store]').forEach((badge) => {
   items.forEach((el) => observer.observe(el));
 })();
 
+// Topic picker. The native <select> stays in the form and keeps the value, so
+// the form submits, resets and preselects exactly as before (and works without
+// JS); this draws an icon menu over it. Icons are keyed by option value, and
+// each option's one-line description is its data-hint, so the copy stays in the
+// page's own language.
+const TOPIC_ICONS = {
+  question: [
+    'var(--c-blue)',
+    '<circle cx="12" cy="12" r="9" /><path d="M9.6 9.4a2.5 2.5 0 1 1 3.4 2.4c-.6.3-1 .8-1 1.5v.4M12 16.8h.01" />',
+  ],
+  bug: [
+    'var(--c-orange)',
+    '<rect x="8" y="7" width="8" height="13" rx="4" /><path d="M9.8 7.4 8.5 5M14.2 7.4 15.5 5M8 11.5H4.5M19.5 11.5H16M8 16H5M19 16h-3M12 11v9" />',
+  ],
+  idea: [
+    'var(--c-amber)',
+    '<path d="M9.5 18h5M10.5 21h3" /><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1v.1h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3Z" />',
+  ],
+  delete: [
+    'var(--c-red)',
+    '<path d="M4 7h16M10 11v6M14 11v6" /><path d="m6 7 .9 12.1A2 2 0 0 0 8.9 21h6.2a2 2 0 0 0 2-1.9L18 7M9 7V4.5A1.5 1.5 0 0 1 10.5 3h3A1.5 1.5 0 0 1 15 4.5V7" />',
+  ],
+  privacy: [
+    'var(--c-purple)',
+    '<path d="M12 3 5 6v5.2c0 4.3 2.9 8.1 7 9.8 4.1-1.7 7-5.5 7-9.8V6l-7-3Z" /><path d="m9 12 2.2 2.2L15.2 10" />',
+  ],
+  other: [
+    'var(--c-teal)',
+    '<path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 20.5l1-4.4A8.5 8.5 0 1 1 20.5 12Z" /><path d="M8.5 12h.01M12 12h.01M15.5 12h.01" />',
+  ],
+};
+
+const svg = (paths, className) =>
+  `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+
+function iconTile(value) {
+  const [accent, paths] = TOPIC_ICONS[value] || TOPIC_ICONS.other;
+  const tile = document.createElement('span');
+  tile.className = 'picker-icon';
+  tile.style.setProperty('--accent', accent);
+  tile.innerHTML = svg(paths, '');
+  return tile;
+}
+
+function enhanceTopicPicker(select) {
+  const field = select.closest('.field');
+  const label = field.querySelector(`label[for="${select.id}"]`);
+  const options = [...select.options];
+
+  const picker = document.createElement('div');
+  picker.className = 'picker';
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.id = `${select.id}-picker`;
+  button.className = 'picker-button';
+  button.setAttribute('aria-haspopup', 'listbox');
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-controls', `${select.id}-options`);
+  label.id ||= `${select.id}-label`;
+  label.htmlFor = button.id;
+  button.setAttribute('aria-labelledby', `${label.id} ${button.id}`);
+
+  const list = document.createElement('ul');
+  list.id = `${select.id}-options`;
+  list.className = 'picker-list';
+  list.setAttribute('role', 'listbox');
+  list.setAttribute('aria-labelledby', label.id);
+  list.tabIndex = -1;
+  list.hidden = true;
+
+  const items = options.map((option, i) => {
+    const li = document.createElement('li');
+    li.id = `${list.id}-${i}`;
+    li.className = 'picker-option';
+    li.setAttribute('role', 'option');
+    const text = document.createElement('span');
+    text.className = 'picker-text';
+    const name = document.createElement('span');
+    name.className = 'picker-label';
+    name.textContent = option.textContent;
+    text.append(name);
+    if (option.dataset.hint) {
+      const hint = document.createElement('span');
+      hint.className = 'picker-hint';
+      hint.textContent = option.dataset.hint;
+      text.append(hint);
+    }
+    li.append(iconTile(option.value), text);
+    li.insertAdjacentHTML('beforeend', svg('<path d="m5 12.5 4.5 4.5L19 7.5" />', 'picker-check'));
+    li.addEventListener('click', () => choose(i));
+    li.addEventListener('pointermove', () => highlight(i));
+    list.append(li);
+    return li;
+  });
+
+  picker.append(button, list);
+  select.after(picker);
+  select.hidden = true;
+
+  let active = 0;
+
+  function render() {
+    const i = Math.max(0, select.selectedIndex);
+    button.replaceChildren(iconTile(options[i].value));
+    const value = document.createElement('span');
+    value.className = 'picker-value';
+    value.textContent = options[i].textContent;
+    button.append(value);
+    button.insertAdjacentHTML('beforeend', svg('<path d="m7 10 5 5 5-5" />', 'picker-chevron'));
+    items.forEach((li, j) => li.setAttribute('aria-selected', String(j === i)));
+  }
+
+  function highlight(i) {
+    active = (i + items.length) % items.length;
+    items.forEach((li, j) => li.classList.toggle('is-active', j === active));
+    list.setAttribute('aria-activedescendant', items[active].id);
+    items[active].scrollIntoView({ block: 'nearest' });
+  }
+
+  function open() {
+    if (!list.hidden) return;
+    list.hidden = false;
+    button.setAttribute('aria-expanded', 'true');
+    // Open upwards when the menu would run off the bottom of the window.
+    list.classList.remove('is-up');
+    const below = window.innerHeight - button.getBoundingClientRect().bottom;
+    const above = button.getBoundingClientRect().top;
+    list.classList.toggle('is-up', below < list.offsetHeight + 16 && above > below);
+    highlight(Math.max(0, select.selectedIndex));
+    list.focus({ preventScroll: true });
+  }
+
+  function close(refocus = true) {
+    if (list.hidden) return;
+    list.hidden = true;
+    button.setAttribute('aria-expanded', 'false');
+    if (refocus) button.focus({ preventScroll: true });
+  }
+
+  function choose(i, refocus = true) {
+    if (select.selectedIndex !== i) {
+      select.selectedIndex = i;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    render();
+    close(refocus);
+  }
+
+  button.addEventListener('click', () => (list.hidden ? open() : close()));
+  button.addEventListener('keydown', (event) => {
+    if (['ArrowDown', 'ArrowUp'].includes(event.key)) {
+      event.preventDefault();
+      open();
+    }
+  });
+
+  let typed = '';
+  let typedAt = 0;
+  list.addEventListener('keydown', (event) => {
+    const keys = {
+      ArrowDown: () => highlight(active + 1),
+      ArrowUp: () => highlight(active - 1),
+      Home: () => highlight(0),
+      End: () => highlight(items.length - 1),
+      Enter: () => choose(active),
+      ' ': () => choose(active),
+      Escape: () => close(),
+    };
+    if (keys[event.key]) {
+      event.preventDefault();
+      keys[event.key]();
+    } else if (event.key === 'Tab') {
+      choose(active, false);
+    } else if (event.key.length === 1 && !event.metaKey && !event.ctrlKey) {
+      // Type to jump, as a native select does.
+      typed = (Date.now() - typedAt > 700 ? '' : typed) + event.key.toLowerCase();
+      typedAt = Date.now();
+      const match = options.findIndex((o) => o.textContent.toLowerCase().startsWith(typed));
+      if (match >= 0) highlight(match);
+    }
+  });
+
+  document.addEventListener('pointerdown', (event) => {
+    if (!picker.contains(event.target)) close(false);
+  });
+  // Tabbing or clicking away. A null relatedTarget is Safari clicking the button
+  // (which it never focuses), and the click handler toggles that instead.
+  list.addEventListener('focusout', (event) => {
+    if (event.relatedTarget && !picker.contains(event.relatedTarget)) close(false);
+  });
+  select.addEventListener('change', render);
+  // reset fires before the form's controls are reset.
+  select.form.addEventListener('reset', () => setTimeout(render));
+
+  render();
+}
+
 // Support form. Its messages follow the page's language: the French pages under
 // fr/ share this script.
 (() => {
@@ -107,6 +305,7 @@ document.querySelectorAll('.store-badge[data-store]').forEach((badge) => {
   if (topic && form.topic.querySelector(`option[value="${CSS.escape(topic)}"]`)) {
     form.topic.value = topic;
   }
+  enhanceTopicPicker(form.topic);
 
   const setStatus = (text, kind) => {
     status.textContent = text;
