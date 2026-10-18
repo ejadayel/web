@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://ejadayel.github.io/web/" />
     <script type="application/ld+json">
-      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android", "applicationCategory": "HealthApplication", "description": "A simple, free habit tracker for iPhone, iPad, Apple Watch and Android. Tap a habit to check it off, keep your streaks going and see your progress.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/", "image": "https://ejadayel.github.io/web/images/og.jpg"}
+      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android, Wear OS", "applicationCategory": "HealthApplication", "description": "A simple, free habit tracker for iPhone, iPad, Apple Watch, Android and Wear OS. Tap a habit to check it off, keep your streaks going and see your progress.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/", "image": "https://ejadayel.github.io/web/images/og.jpg"}
     </script>
     <link rel="icon" href="icon.png" />
     <link rel="apple-touch-icon" href="icon.png" />
@@ -67,7 +67,7 @@
               <span class="pill">Free</span>
               <span class="pill">No ads</span>
               <span class="pill">No sign-up</span>
-              <span class="pill">⌚️ Apple Watch</span>
+              <span class="pill">⌚️ Apple Watch &amp; Wear OS</span>
             </div>
             <h1 style="margin-top: 22px">
               Build habits<br />in <span class="ring-word">one tap.</span>
@@ -87,7 +87,7 @@
               </a>
             </div>
             <a class="hero-more" href="#how">See how it works <span aria-hidden="true">↓</span></a>
-            <p class="platforms">iPhone · iPhone Duo · iPad · Apple Watch · Android</p>
+            <p class="platforms">iPhone · iPhone Duo · iPad · Apple Watch · Android · Wear OS</p>
           </div>
 
           <div class="hero-art" aria-hidden="true">
@@ -104,6 +104,9 @@
             />
             <div class="watch hero-watch">
               <img src="images/watch-today.png" alt="" width="416" height="496" fetchpriority="high" />
+            </div>
+            <div class="wear hero-wear">
+              <img src="images/wear-today.png" alt="" width="454" height="454" fetchpriority="high" />
             </div>
             <div class="float-chip chip-a">
               <span class="dot" style="background: var(--c-green)">✓</span>Morning walk done
@@ -133,7 +136,7 @@
           <div class="section-head reveal">
             <span class="eyebrow">How it works</span>
             <h2>Up and running in a minute</h2>
-            <p>No account and no setup. Open the app and your first habits are already there.</p>
+            <p>No account needed. A short welcome sets up reminders and your first challenge, and the example habits are already there.</p>
           </div>
           <ol class="steps-row">
             <li class="step reveal" style="--accent: var(--c-green)">
@@ -146,13 +149,13 @@
               <span class="step-num" aria-hidden="true">2</span>
               <span class="icon-badge" aria-hidden="true">👆</span>
               <h3>Tap to check off</h3>
-              <p>One tap in the app, on your Home Screen widget or on your Apple Watch, with a cheerful sound to say well done.</p>
+              <p>One tap in the app, on your Home Screen widget or on your watch, with a cheerful sound to say well done.</p>
             </li>
             <li class="step reveal" style="--accent: var(--c-purple)">
               <span class="step-num" aria-hidden="true">3</span>
               <span class="icon-badge" aria-hidden="true">📈</span>
               <h3>Watch your progress</h3>
-              <p>Streaks, a 14-day chart and 7-day challenges show how far you have come, and keep you coming back.</p>
+              <p>Streaks, a 14-day chart and 3-, 7- or 21-day challenges show how far you have come, and keep you coming back.</p>
             </li>
           </ol>
         </div>
@@ -187,6 +190,7 @@
               </p>
               <ul class="ticks">
                 <li>Haptics and sounds on every tap</li>
+                <li>Hold a habit to undo a mis-tap</li>
                 <li>A celebration when every habit is done</li>
                 <li>Plays nicely with your music</li>
               </ul>
@@ -214,7 +218,7 @@
               <ul class="ticks">
                 <li>Consistency score and perfect days</li>
                 <li>A two-week strip for each habit</li>
-                <li>7-day challenges to push a little further</li>
+                <li>3-, 7- or 21-day challenges to push a little further</li>
               </ul>
             </div>
           </div>
@@ -248,12 +252,12 @@
           <div class="feature reveal" id="apple-watch" style="--accent: var(--c-green)">
             <div class="feature-art">
               <div class="watch-pair">
-                <div class="watch watch-back">
+                <div class="wear wear-back">
                   <img
-                    src="images/watch-progress.png"
-                    alt="Daily Ring on Apple Watch: the Progress page with the last 14 days"
-                    width="416"
-                    height="496"
+                    src="images/wear-progress.png"
+                    alt="Daily Ring on Wear OS: the Progress page with the last 14 days"
+                    width="454"
+                    height="454"
                     loading="lazy"
                   />
                 </div>
@@ -272,14 +276,14 @@
               <span class="icon-badge">⌚️</span>
               <h3>Right on your wrist</h3>
               <p>
-                Daily Ring comes with an Apple Watch app. Glance at today, tap a habit to log it,
-                and swipe across to see how your last two weeks went. Your phone can stay in your
-                pocket.
+                Daily Ring comes with an Apple Watch app and a Wear OS app. Glance at today, tap a
+                habit to log it, and swipe across to see how your last two weeks went. Your phone can
+                stay in your pocket.
               </p>
               <ul class="ticks">
-                <li>Log habits from Apple Watch</li>
+                <li>Log habits from Apple Watch or Wear OS</li>
                 <li>Haptics, sounds and confetti on the wrist</li>
-                <li>Stays in step with your iPhone</li>
+                <li>Stays in step with your phone</li>
               </ul>
             </div>
           </div>
@@ -404,6 +408,7 @@
             <span class="pill">iPad</span>
             <span class="pill">Apple Watch</span>
             <span class="pill">Android</span>
+            <span class="pill">Wear OS</span>
             <span class="pill">Light &amp; Dark Mode</span>
           </div>
         </div>
@@ -426,7 +431,7 @@
             <li class="moment reveal" style="--accent: var(--c-green)">
               <span class="icon-badge" aria-hidden="true">⌚️</span>
               <h3>Logged before you’re through the door</h3>
-              <p>Back from your morning walk? Tick it off on your Apple Watch, with your phone still in your pocket.</p>
+              <p>Back from your morning walk? Tick it off on your watch, with your phone still in your pocket.</p>
             </li>
             <li class="moment reveal" style="--accent: var(--c-teal)">
               <span class="icon-badge" aria-hidden="true">📱</span>
@@ -446,7 +451,7 @@
             <li class="moment reveal" style="--accent: var(--c-orange)">
               <span class="icon-badge" aria-hidden="true">🔥</span>
               <h3>A streak worth protecting</h3>
-              <p>Watch the days add up, then take on a 7-day challenge to push a little further.</p>
+              <p>Watch the days add up, then take on a 3-, 7- or 21-day challenge to push a little further.</p>
             </li>
           </ul>
         </div>
@@ -521,7 +526,7 @@
           <div class="cta reveal">
             <img class="cta-icon" src="icon.png" alt="" width="96" height="96" loading="lazy" />
             <h2>Start your first streak today</h2>
-            <p>Free, with no ads, no subscription and no sign-up. On iPhone, iPad, Apple Watch and Android.</p>
+            <p>Free, with no ads, no subscription and no sign-up. On iPhone, iPad, Apple Watch, Android and Wear OS.</p>
             <div class="store-row" role="group" aria-label="Download Daily Ring">
               <a class="store-badge is-soon" data-store="appStore" data-live="Download on the">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3" fill="none" stroke="currentColor" stroke-width="1.8" /><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
@@ -554,7 +559,7 @@
                 Yes. Daily Ring follows your device’s language: French if your phone is set to
                 French, English otherwise. To choose a language in the app itself, tap the gear on
                 the <strong>Habits</strong> tab and pick one under <strong>Language</strong>. The
-                widget and the Apple Watch app keep following your device’s language; to change it
+                widget and the watch apps keep following your device’s language; to change it
                 for Daily Ring alone, go to <strong>Settings → Daily Ring → Language</strong> on
                 iPhone, or to App languages on Android 13 and later.
               </p>
@@ -603,8 +608,10 @@
               <summary>How do I reorder or edit habits?</summary>
               <p>
                 On the <strong>Habits</strong> tab, touch and hold a habit, then drag it. The new
-                order appears on every screen. Tap <strong>Edit</strong> on a habit to rename it or
-                change its daily target.
+                order appears on every screen. Tap <strong>Edit</strong> on a habit to change its name,
+                icon, colour or daily target, or to switch it between <strong>Once a day</strong> and
+                <strong>Several times</strong>. Tapped one by mistake on <strong>Today</strong>? Hold
+                it to undo.
               </p>
             </details>
             <details>
@@ -624,6 +631,14 @@
                 <strong>Automatic App Install</strong> is on in the Watch app. It needs watchOS 10
                 or later, and anything you log on your wrist reaches your iPhone the next time they
                 are connected.
+              </p>
+            </details>
+            <details>
+              <summary>Is there a Wear OS app?</summary>
+              <p>
+                Yes. It comes with the Android app: once Daily Ring is on your phone, install it on
+                your watch from the Play Store on the watch. It needs Wear OS 3 or later, and
+                anything you log on your wrist reaches your phone the next time they are connected.
               </p>
             </details>
             <details>

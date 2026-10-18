@@ -704,6 +704,18 @@ header.site nav .theme-toggle[aria-expanded='true'] {
     inset 0 0 0 1.5px rgba(255, 255, 255, 0.14);
 }
 
+/* The Wear OS watch sits beside the Apple Watch, in front of the phone. */
+.hero-art .hero-wear {
+  width: 170px;
+  left: 27%;
+  bottom: 96px;
+  z-index: 3;
+  transform: rotate(6deg);
+  box-shadow:
+    0 30px 60px -18px rgba(5, 20, 60, 0.7),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.14);
+}
+
 .float-chip {
   position: absolute;
   z-index: 3;
@@ -766,6 +778,11 @@ header.site nav .theme-toggle[aria-expanded='true'] {
     width: 214px;
     right: -3%;
   }
+  .hero-art .hero-wear {
+    width: 148px;
+    left: 30%;
+    bottom: 90px;
+  }
 }
 
 @media (max-width: 900px) {
@@ -812,6 +829,11 @@ header.site nav .theme-toggle[aria-expanded='true'] {
     width: 140px;
     left: -2%;
     bottom: 24px;
+  }
+  .hero-art .hero-wear {
+    width: 118px;
+    left: 29%;
+    bottom: 56px;
   }
   .chip-a {
     left: 0;
@@ -996,6 +1018,45 @@ section.block {
   top: 0;
   transform: rotate(5deg) scale(0.9);
   opacity: 0.92;
+}
+
+/* Wear OS: a raw round watch screen in a drawn round case. */
+
+.wear {
+  position: absolute;
+  padding: 4.5%;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #3a3d44, #121317 55%, #26282e);
+  box-shadow:
+    var(--shadow-lg),
+    inset 0 0 0 1.5px rgba(255, 255, 255, 0.14);
+}
+
+.wear img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  background: #000;
+}
+
+.wear::after {
+  /* the crown */
+  content: '';
+  position: absolute;
+  right: -3%;
+  top: 42%;
+  width: 4.5%;
+  height: 16%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #2a2c31, #5c606a);
+}
+
+.wear-back {
+  width: 56%;
+  right: 0;
+  top: 0;
+  transform: rotate(6deg);
 }
 
 .feature-copy h3 {
