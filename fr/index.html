@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://ejadayel.github.io/web/fr/" />
     <script type="application/ld+json">
-      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android, Wear OS", "applicationCategory": "HealthApplication", "description": "Un suivi d’habitudes simple et gratuit pour iPhone, iPad, Apple Watch, Android et Wear OS. Touchez une habitude pour la cocher, gardez vos séries et suivez vos progrès.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/fr/", "image": "https://ejadayel.github.io/web/images/fr/og.jpg"}
+      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android, Wear OS", "applicationCategory": "HealthApplication", "description": "Un suivi d’habitudes simple et gratuit pour iPhone, iPad, Apple Watch, Android et Wear OS. Touchez une habitude pour la cocher, choisissez les jours qui vous conviennent, protégez vos séries avec des boucliers et suivez vos progrès.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/fr/", "image": "https://ejadayel.github.io/web/images/fr/og.jpg"}
     </script>
     <meta property="og:locale" content="fr_FR" />
     <link rel="icon" href="../icon.png" />
@@ -75,8 +75,8 @@
             </h1>
             <p class="lede">
               Daily Ring rend les bonnes habitudes faciles à tenir. Touchez une habitude pour la
-              cocher, regardez vos séries grandir et suivez vos progrès d’un coup d’œil. Gratuit,
-              et prêt en quelques secondes.
+              cocher, choisissez vos jours et regardez vos séries grandir. Gratuit, et prêt en
+              quelques secondes.
             </p>
             <div class="store-row" role="group" aria-label="Télécharger Daily Ring">
               <a class="store-badge is-soon" data-store="appStore" data-live="Télécharger dans l’">
@@ -146,14 +146,14 @@
           <div class="section-head reveal">
             <span class="eyebrow">Comment ça marche</span>
             <h2>Prêt en une minute</h2>
-            <p>Pas de compte. Un court accueil règle vos rappels et votre premier défi, et les habitudes d’exemple vous attendent déjà.</p>
+            <p>Pas de compte. Un court accueil vous présente les fréquences et les boucliers de série, règle vos rappels et votre premier défi, et les habitudes d’exemple vous attendent déjà.</p>
           </div>
           <ol class="steps-row">
             <li class="step reveal" style="--accent: var(--c-green)">
               <span class="step-num" aria-hidden="true">1</span>
               <span class="icon-badge" aria-hidden="true">🌱</span>
               <h3>Choisissez vos habitudes</h3>
-              <p>Gardez les quatre exemples ou ajoutez les vôtres : une fois par jour, ou un compte comme 8 verres d’eau.</p>
+              <p>Gardez les quatre exemples ou ajoutez les vôtres : une fois par jour ou un compte comme 8 verres d’eau, chaque jour ou seulement les jours de votre choix.</p>
             </li>
             <li class="step reveal" style="--accent: var(--c-blue)">
               <span class="step-num" aria-hidden="true">2</span>
@@ -165,7 +165,7 @@
               <span class="step-num" aria-hidden="true">3</span>
               <span class="icon-badge" aria-hidden="true">📈</span>
               <h3>Suivez vos progrès</h3>
-              <p>Séries, graphique sur 14 jours et défis de 3, 7 ou 21 jours : voyez le chemin parcouru, et gardez l’envie de revenir.</p>
+              <p>Séries, calendrier du mois et défis de 3, 7 ou 21 jours : voyez le chemin parcouru, et gardez l’envie de revenir.</p>
             </li>
           </ol>
         </div>
@@ -207,12 +207,51 @@
             </div>
           </div>
 
+          <div class="feature reveal" id="schedules" style="--accent: var(--c-green)">
+            <div class="feature-art">
+              <div
+                class="week-art"
+                role="img"
+                aria-label="Une habitude réglée pour revenir en semaine, et sa semaine : faite lundi, mardi, jeudi et vendredi, mercredi couvert par un bouclier de série, et le week-end en repos"
+              >
+                <div class="mini-card week-repeat">
+                  <span class="mini-label">Répétition</span>
+                  <div class="mini-seg"><span>Chaque jour</span><span class="on">Certains jours</span><span>Par semaine</span></div>
+                  <div class="mini-days"><span class="on">L</span><span class="on">M</span><span class="on">M</span><span class="on">J</span><span class="on">V</span><span>S</span><span>D</span></div>
+                  <span class="mini-note">En semaine</span>
+                </div>
+                <div class="mini-card week-streak">
+                  <div class="mini-head">
+                    <span class="mini-habit"><span class="mini-emoji">🏃</span>Course du matin</span>
+                    <span class="mini-badges">🔥 23 &nbsp;🛡️ 1</span>
+                  </div>
+                  <div class="mini-marks"><span class="done"><i>✓</i>L</span><span class="done"><i>✓</i>M</span><span class="shield"><i>🛡️</i>M</span><span class="done"><i>✓</i>J</span><span class="done"><i>✓</i>V</span><span class="rest"><i></i>S</span><span class="rest"><i></i>D</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="feature-copy">
+              <span class="icon-badge">🗓️</span>
+              <h3>Au rythme de votre semaine</h3>
+              <p>
+                Toutes les habitudes ne sont pas quotidiennes. Choisissez les jours qui conviennent
+                à chacune, ou simplement combien de fois par semaine, et Daily Ring ne compte que
+                les jours prévus. Un jour manqué malgré tout ? Un bouclier de série prend le relais.
+              </p>
+              <ul class="ticks">
+                <li>Chaque jour, certains jours ou quelques fois par semaine</li>
+                <li>Les habitudes hebdomadaires attendent dans <strong>En option aujourd’hui</strong> jusqu’à ce qu’elles soient dues</li>
+                <li>Chaque série de 7 jours réussis vous vaut un 🛡️ bouclier, jusqu’à 2</li>
+                <li>Un bouclier couvre un jour manqué : la série continue</li>
+              </ul>
+            </div>
+          </div>
+
           <div class="feature reveal" style="--accent: var(--c-purple)">
             <div class="feature-art">
               <img
                 class="shot"
                 src="../images/fr/progress.jpg"
-                alt="L’écran Progrès avec un graphique sur 14 jours et une frise par habitude"
+                alt="L’écran Progrès avec un graphique sur 14 jours et une frise de série par habitude"
                 width="720"
                 height="1276"
                 loading="lazy"
@@ -222,12 +261,14 @@
               <span class="icon-badge">📈</span>
               <h3>Regardez vos séries grandir</h3>
               <p>
-                Vos 14 derniers jours d’un coup d’œil : votre régularité, vos journées parfaites et
-                une série pour chaque habitude. Un progrès qu’on voit est un progrès qu’on garde.
+                Vos 14 derniers jours d’un coup d’œil, un calendrier du mois à feuilleter, et toute
+                l’année de chaque habitude en carte de chaleur. Un progrès qu’on voit est un progrès
+                qu’on garde.
               </p>
               <ul class="ticks">
                 <li>Score de régularité et journées parfaites</li>
-                <li>Une frise de deux semaines par habitude</li>
+                <li>Un calendrier du mois à feuilleter vers le passé</li>
+                <li>Une carte de l’année pour chaque habitude</li>
                 <li>Des défis de 3, 7 ou 21 jours pour aller un peu plus loin</li>
               </ul>
             </div>
@@ -337,15 +378,16 @@
             </div>
             <div class="feature-copy">
               <span class="icon-badge">🔔</span>
-              <h3>Un petit rappel, deux fois par jour</h3>
+              <h3>Un rappel au bon moment</h3>
               <p>
                 Des rappels matin et soir qui savent ce qu’il vous reste, pour qu’un rappel veuille
-                toujours dire quelque chose. Vous choisissez les heures ; tout reste sur votre
-                appareil.
+                toujours dire quelque chose. Donnez aussi à chaque habitude sa propre heure. Tout
+                reste sur votre appareil.
               </p>
               <ul class="ticks">
-                <li>Deux rappels, aux heures de votre choix</li>
-                <li>Ils vous disent ce qu’il reste à faire</li>
+                <li>Un point le matin et le soir, aux heures de votre choix</li>
+                <li>Un rappel par habitude, seulement les jours où elle est prévue</li>
+                <li>Sauté une fois l’habitude faite</li>
                 <li>Aucun serveur de notifications, aucun pistage</li>
               </ul>
             </div>
@@ -462,9 +504,9 @@
               <p>Cochez la dernière habitude et les confettis tombent. Une petite fête bien méritée.</p>
             </li>
             <li class="moment reveal" style="--accent: var(--c-orange)">
-              <span class="icon-badge" aria-hidden="true">🔥</span>
-              <h3>Une série à protéger</h3>
-              <p>Regardez les jours s’additionner, puis relevez un défi de 3, 7 ou 21 jours pour aller un peu plus loin.</p>
+              <span class="icon-badge" aria-hidden="true">🛡️</span>
+              <h3>Un jour sans, la série intacte</h3>
+              <p>Chaque série de 7 jours réussis vous vaut un bouclier. Manquez un jour et il prend le relais : un mauvais mardi n’efface pas un mois.</p>
             </li>
           </ul>
         </div>
@@ -620,8 +662,11 @@
               <summary>Comment régler les rappels ?</summary>
               <p>
                 Allez dans <strong>Habitudes → Rappels</strong>, activez-les et choisissez les
-                heures. Les rappels restent sur votre appareil : autorisez donc les notifications de
-                Daily Ring dans les réglages de votre téléphone.
+                heures. Pour un rappel sur une seule habitude, touchez <strong>Modifier</strong> sur
+                celle-ci et ajoutez une heure sous <strong>Rappel</strong> : il ne sonne que les jours
+                où l’habitude est prévue, et plus une fois qu’elle est faite. Les rappels restent sur
+                votre appareil : autorisez donc les notifications de Daily Ring dans les réglages de
+                votre téléphone.
               </p>
             </details>
             <details>
@@ -629,10 +674,31 @@
               <p>
                 Dans l’onglet <strong>Habitudes</strong>, maintenez le doigt sur une habitude, puis
                 faites-la glisser. Le nouvel ordre s’applique à tous les écrans. Touchez
-                <strong>Modifier</strong> sur une habitude pour changer son nom, son icône, sa couleur
-                ou son objectif quotidien, ou la faire passer de <strong>Une fois par jour</strong> à
+                <strong>Modifier</strong> sur une habitude pour changer son nom, son icône, sa couleur,
+                son objectif quotidien ou sa fréquence, ou la faire passer de <strong>Une fois par jour</strong> à
                 <strong>Plusieurs fois</strong>. Une habitude cochée par erreur dans
                 <strong>Aujourd’hui</strong> ? Maintenez-la pour annuler.
+              </p>
+            </details>
+            <details>
+              <summary>Une habitude peut-elle revenir certains jours seulement ?</summary>
+              <p>
+                Oui. Quand vous ajoutez ou modifiez une habitude, choisissez sous
+                <strong>Répétition</strong> : <strong>Chaque jour</strong>, <strong>Certains
+                jours</strong> pour choisir les jours de la semaine, ou <strong>Par semaine</strong>
+                pour la faire un certain nombre de jours par semaine, les jours que vous voulez. Un
+                jour où l’habitude n’est pas prévue ne compte jamais contre elle, et une habitude
+                hebdomadaire attend dans <strong>En option aujourd’hui</strong> jusqu’à ce que les
+                jours restants de la semaine ne laissent plus de marge.
+              </p>
+            </details>
+            <details>
+              <summary>Que sont les boucliers de série ?</summary>
+              <p>
+                Chaque série de 7 jours où vous faites une habitude lui vaut un 🛡️ bouclier, jusqu’à
+                2. Si vous manquez un jour où elle était prévue, un bouclier le couvre et la série
+                continue. Les boucliers d’une habitude s’affichent à côté de sa série dans
+                <strong>Aujourd’hui</strong>.
               </p>
             </details>
             <details>

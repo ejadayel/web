@@ -30,7 +30,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://ejadayel.github.io/web/" />
     <script type="application/ld+json">
-      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android, Wear OS", "applicationCategory": "HealthApplication", "description": "A simple, free habit tracker for iPhone, iPad, Apple Watch, Android and Wear OS. Tap a habit to check it off, keep your streaks going and see your progress.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/", "image": "https://ejadayel.github.io/web/images/og.jpg"}
+      {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Daily Ring", "operatingSystem": "iOS, iPadOS, watchOS, Android, Wear OS", "applicationCategory": "HealthApplication", "description": "A simple, free habit tracker for iPhone, iPad, Apple Watch, Android and Wear OS. Tap a habit to check it off, set the days that suit you, keep your streaks going with streak shields and see your progress.", "inLanguage": ["en", "fr"], "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "url": "https://ejadayel.github.io/web/", "image": "https://ejadayel.github.io/web/images/og.jpg"}
     </script>
     <link rel="icon" href="icon.png" />
     <link rel="apple-touch-icon" href="icon.png" />
@@ -73,8 +73,8 @@
               Build habits<br />in <span class="ring-word">one tap.</span>
             </h1>
             <p class="lede">
-              Daily Ring makes good habits easy to keep. Tap a habit to check it off, watch your
-              streaks grow, and see your progress at a glance. Free, and ready in seconds.
+              Daily Ring makes good habits easy to keep. Tap a habit to check it off, pick the days
+              that suit you, and watch your streaks grow. Free, and ready in seconds.
             </p>
             <div class="store-row" role="group" aria-label="Download Daily Ring">
               <a class="store-badge is-soon" data-store="appStore" data-live="Download on the">
@@ -136,14 +136,14 @@
           <div class="section-head reveal">
             <span class="eyebrow">How it works</span>
             <h2>Up and running in a minute</h2>
-            <p>No account needed. A short welcome sets up reminders and your first challenge, and the example habits are already there.</p>
+            <p>No account needed. A short welcome shows you schedules and streak shields, sets up reminders and your first challenge, and the example habits are already there.</p>
           </div>
           <ol class="steps-row">
             <li class="step reveal" style="--accent: var(--c-green)">
               <span class="step-num" aria-hidden="true">1</span>
               <span class="icon-badge" aria-hidden="true">🌱</span>
               <h3>Pick your habits</h3>
-              <p>Keep the four examples or add your own: once a day, or a count like 8 glasses of water.</p>
+              <p>Keep the four examples or add your own: once a day or a count like 8 glasses of water, every day or only on the days you choose.</p>
             </li>
             <li class="step reveal" style="--accent: var(--c-blue)">
               <span class="step-num" aria-hidden="true">2</span>
@@ -155,7 +155,7 @@
               <span class="step-num" aria-hidden="true">3</span>
               <span class="icon-badge" aria-hidden="true">📈</span>
               <h3>Watch your progress</h3>
-              <p>Streaks, a 14-day chart and 3-, 7- or 21-day challenges show how far you have come, and keep you coming back.</p>
+              <p>Streaks, a month calendar and 3-, 7- or 21-day challenges show how far you have come, and keep you coming back.</p>
             </li>
           </ol>
         </div>
@@ -197,12 +197,51 @@
             </div>
           </div>
 
+          <div class="feature reveal" id="schedules" style="--accent: var(--c-green)">
+            <div class="feature-art">
+              <div
+                class="week-art"
+                role="img"
+                aria-label="A habit set to repeat on weekdays, and its week: done Monday, Tuesday, Thursday and Friday, Wednesday covered by a streak shield, and the weekend a rest day"
+              >
+                <div class="mini-card week-repeat">
+                  <span class="mini-label">Repeat</span>
+                  <div class="mini-seg"><span>Daily</span><span class="on">Some days</span><span>Weekly</span></div>
+                  <div class="mini-days"><span>S</span><span class="on">M</span><span class="on">T</span><span class="on">W</span><span class="on">T</span><span class="on">F</span><span>S</span></div>
+                  <span class="mini-note">Weekdays</span>
+                </div>
+                <div class="mini-card week-streak">
+                  <div class="mini-head">
+                    <span class="mini-habit"><span class="mini-emoji">🏃</span>Morning run</span>
+                    <span class="mini-badges">🔥 23 &nbsp;🛡️ 1</span>
+                  </div>
+                  <div class="mini-marks"><span class="rest"><i></i>S</span><span class="done"><i>✓</i>M</span><span class="done"><i>✓</i>T</span><span class="shield"><i>🛡️</i>W</span><span class="done"><i>✓</i>T</span><span class="done"><i>✓</i>F</span><span class="rest"><i></i>S</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="feature-copy">
+              <span class="icon-badge">🗓️</span>
+              <h3>Built around your week</h3>
+              <p>
+                Not every habit is a daily one. Pick the days that suit each habit, or just how many
+                times a week, and Daily Ring only counts the days you asked for. Miss one anyway? A
+                streak shield has your back.
+              </p>
+              <ul class="ticks">
+                <li>Every day, chosen weekdays or a few times a week</li>
+                <li>Weekly habits wait under <strong>Optional today</strong> until they’re due</li>
+                <li>Every 7 days done banks a 🛡️ shield, up to 2</li>
+                <li>A shield covers a missed day, so the streak lives on</li>
+              </ul>
+            </div>
+          </div>
+
           <div class="feature reveal" style="--accent: var(--c-purple)">
             <div class="feature-art">
               <img
                 class="shot"
                 src="images/progress.jpg"
-                alt="Progress screen with a 14-day chart and per-habit streak strips"
+                alt="Progress screen with a 14-day chart and a streak strip for each habit"
                 width="720"
                 height="1276"
                 loading="lazy"
@@ -212,12 +251,13 @@
               <span class="icon-badge">📈</span>
               <h3>Watch your streaks grow</h3>
               <p>
-                See your last 14 days at a glance: your consistency, your perfect days, and a streak
-                for every habit. Progress you can actually see is progress you keep.
+                See your last 14 days at a glance, page back through a month calendar, and open any
+                habit’s whole year as a heatmap. Progress you can actually see is progress you keep.
               </p>
               <ul class="ticks">
                 <li>Consistency score and perfect days</li>
-                <li>A two-week strip for each habit</li>
+                <li>A month calendar you can page back through</li>
+                <li>A year heatmap for every habit</li>
                 <li>3-, 7- or 21-day challenges to push a little further</li>
               </ul>
             </div>
@@ -327,14 +367,15 @@
             </div>
             <div class="feature-copy">
               <span class="icon-badge">🔔</span>
-              <h3>A gentle nudge, twice a day</h3>
+              <h3>A nudge at the right time</h3>
               <p>
                 Morning and evening reminders that know what's left, so a nudge always means
-                something. Pick the times; they stay on your device.
+                something. Give any habit a time of its own, too. Everything stays on your device.
               </p>
               <ul class="ticks">
-                <li>Two reminders, at times you choose</li>
-                <li>They tell you what's still to do</li>
+                <li>Morning and evening check-ins, at times you choose</li>
+                <li>A reminder for any habit, only on days it’s due</li>
+                <li>Skipped once that habit is done</li>
                 <li>No push servers, no tracking</li>
               </ul>
             </div>
@@ -449,9 +490,9 @@
               <p>Check off the last habit and the confetti falls. A small celebration you earned.</p>
             </li>
             <li class="moment reveal" style="--accent: var(--c-orange)">
-              <span class="icon-badge" aria-hidden="true">🔥</span>
-              <h3>A streak worth protecting</h3>
-              <p>Watch the days add up, then take on a 3-, 7- or 21-day challenge to push a little further.</p>
+              <span class="icon-badge" aria-hidden="true">🛡️</span>
+              <h3>One off day, streak intact</h3>
+              <p>Every 7 days done banks a shield. Miss a day and it steps in, so one bad Tuesday doesn’t undo a month.</p>
             </li>
           </ul>
         </div>
@@ -599,9 +640,11 @@
             <details>
               <summary>How do I set reminders?</summary>
               <p>
-                Go to <strong>Habits → Reminders</strong>, turn them on and pick the times.
-                Reminders stay on your device, so allow notifications for Daily Ring in your phone’s
-                settings.
+                Go to <strong>Habits → Reminders</strong>, turn them on and pick the times. For a
+                reminder about one habit, tap <strong>Edit</strong> on it and add a time under
+                <strong>Reminder</strong>; it only rings on days the habit is due, and not once it’s
+                done. Reminders stay on your device, so allow notifications for Daily Ring in your
+                phone’s settings.
               </p>
             </details>
             <details>
@@ -609,9 +652,28 @@
               <p>
                 On the <strong>Habits</strong> tab, touch and hold a habit, then drag it. The new
                 order appears on every screen. Tap <strong>Edit</strong> on a habit to change its name,
-                icon, colour or daily target, or to switch it between <strong>Once a day</strong> and
+                icon, colour, daily target or schedule, or to switch it between <strong>Once a day</strong> and
                 <strong>Several times</strong>. Tapped one by mistake on <strong>Today</strong>? Hold
                 it to undo.
+              </p>
+            </details>
+            <details>
+              <summary>Can a habit repeat only on some days?</summary>
+              <p>
+                Yes. When you add or edit a habit, choose under <strong>Repeat</strong>:
+                <strong>Daily</strong>, <strong>Some days</strong> to pick the weekdays, or
+                <strong>Weekly</strong> to do it a number of days a week, whichever days you like.
+                A day a habit isn’t due never counts against it, and a weekly habit waits under
+                <strong>Optional today</strong> until the days left in the week leave no room to
+                skip.
+              </p>
+            </details>
+            <details>
+              <summary>What are streak shields?</summary>
+              <p>
+                Every 7 days you complete a habit earns it a 🛡️ shield, and it can hold up to 2.
+                Miss a day the habit was due and a shield covers it, so the streak carries on. A
+                habit’s shields show beside its streak on <strong>Today</strong>.
               </p>
             </details>
             <details>

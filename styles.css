@@ -19,6 +19,7 @@
   --bg: #f6f8fc;
   --bg-elev: #ffffff;
   --surface: #eef1f7;
+  --raised: #ffffff;
   --text: #11141a;
   --muted: #5b6270;
   --border: rgba(17, 20, 26, 0.08);
@@ -48,6 +49,7 @@
     --bg: #07090d;
     --bg-elev: #12151c;
     --surface: #181c25;
+  --raised: #262b37;
     --text: #eef0f4;
     --muted: #a2a9b6;
     --border: rgba(255, 255, 255, 0.08);
@@ -64,6 +66,7 @@
   --bg: #07090d;
   --bg-elev: #12151c;
   --surface: #181c25;
+  --raised: #262b37;
   --text: #eef0f4;
   --muted: #a2a9b6;
   --border: rgba(255, 255, 255, 0.08);
@@ -1191,6 +1194,190 @@ section.block {
   .steps-row {
     grid-template-columns: 1fr;
     max-width: 520px;
+  }
+}
+
+/* Schedules and shields: two small cards drawn in the app's own style rather
+   than a screenshot, so the art follows the theme and needs no made-up history.
+   The selected weekday is the app's monochrome accent (text on its background),
+   the week marks are the habit's colour. */
+
+.week-art {
+  position: relative;
+  display: grid;
+  gap: 18px;
+  width: min(360px, 100%);
+}
+
+.mini-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  text-align: left;
+}
+
+.week-repeat {
+  margin-right: 32px;
+  transform: rotate(-2deg);
+}
+
+.week-streak {
+  margin-left: 32px;
+  transform: rotate(1.5deg);
+}
+
+.mini-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mini-seg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 3px;
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.mini-seg span {
+  padding: 8px 4px;
+  border-radius: 11px;
+}
+
+.mini-seg .on {
+  background: var(--raised);
+  color: var(--text);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.mini-days {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 14px 0 10px;
+}
+
+.mini-days span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mini-days .on {
+  background: var(--text);
+  color: var(--bg-elev);
+}
+
+.mini-note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.mini-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.mini-habit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.mini-emoji {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  font-size: 17px;
+}
+
+.mini-badges {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.mini-marks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini-marks > span {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mini-marks i {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.mini-marks .done i {
+  background: var(--accent);
+}
+
+.mini-marks .shield i {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--accent) 45%, transparent);
+  font-size: 15px;
+}
+
+.mini-marks .rest i {
+  background: var(--surface);
+}
+
+@media (max-width: 420px) {
+  .week-repeat {
+    margin-right: 12px;
+  }
+  .week-streak {
+    margin-left: 12px;
+  }
+  .mini-card {
+    padding: 16px;
+  }
+  .mini-days span {
+    width: 30px;
+    height: 30px;
+  }
+  .mini-marks i {
+    width: 28px;
+    height: 28px;
   }
 }
 
