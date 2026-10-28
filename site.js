@@ -212,6 +212,34 @@ document.querySelectorAll('.store-badge[data-store]').forEach((badge) => {
   items.forEach((el) => observer.observe(el));
 })();
 
+// Sound packs: each button plays its pack's fanfare, as a tap does in the app's
+// Settings. One sound at a time; a second tap on the playing one stops it.
+(() => {
+  const buttons = document.querySelectorAll('[data-sound]');
+  if (!buttons.length) return;
+  let audio = null;
+  let current = null;
+  const stop = () => {
+    if (audio) audio.pause();
+    if (current) current.setAttribute('aria-pressed', 'false');
+    current = null;
+  };
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const same = current === button;
+      stop();
+      if (same) return;
+      audio = new Audio(button.dataset.sound);
+      audio.addEventListener('ended', () => {
+        if (current === button) stop();
+      });
+      current = button;
+      button.setAttribute('aria-pressed', 'true');
+      audio.play().catch(stop);
+    });
+  });
+})();
+
 // Topic picker. The native <select> stays in the form and keeps the value, so
 // the form submits, resets and preselects exactly as before (and works without
 // JS); this draws an icon menu over it. Icons are keyed by option value, and
