@@ -1,6 +1,6 @@
 # Daily Ring website
 
-The support, privacy policy and account deletion pages for Daily Ring, served by GitHub Pages.
+The support, privacy policy and account deletion pages for Daily Ring, served by GitHub Pages at https://dailyring.ca (the `CNAME` file holds the domain; DNS is at Porkbun).
 
 Plain HTML, CSS and JavaScript — no build step. Edit a file, push to `main`, and Pages redeploys.
 
