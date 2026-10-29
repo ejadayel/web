@@ -886,7 +886,7 @@
                 of days.
               </p>
               <ul>
-                <li><span>🐞</span><span>For a bug, tell us your device and app version.</span></li>
+                <li><span>🧭</span><span>Pick a topic and the form asks only for what helps with it.</span></li>
                 <li>
                   <span>💡</span><span>Ideas are welcome. Small and simple ones especially.</span>
                 </li>
@@ -906,7 +906,12 @@
                 <input id="name" name="name" type="text" autocomplete="name" maxlength="100" />
               </div>
               <div class="field">
-                <label for="email">Email</label>
+                <label for="email"
+                  ><span data-topics="question bug idea other">Email</span
+                  ><span data-topics="delete privacy" hidden
+                    >Email on your Daily Ring account</span
+                  ></label
+                >
                 <input
                   id="email"
                   name="email"
@@ -927,7 +932,75 @@
                   <option value="other" data-hint="Anything that doesn’t fit above">Something else</option>
                 </select>
               </div>
-              <div class="field field-wide">
+              <!-- The fields below follow the topic: site.js shows each one whose
+                   data-topics names it. As loaded, without JS, they are set up for
+                   a question. -->
+              <div class="topic-note field-wide" data-topics="delete" hidden>
+                <p>
+                  <strong>Still have the app?</strong> Habits → Account → Delete account
+                  removes it straight away. Use this form if you no longer have it, and we will
+                  write to the email above to confirm the request is yours.
+                  <a href="delete-account.html">How deletion works</a>
+                </p>
+              </div>
+              <fieldset class="field field-wide" data-topics="privacy" hidden>
+                <legend>What would you like?</legend>
+                <div class="chips">
+                  <label class="chip"
+                    ><input type="radio" name="request" value="copy" checked /><span
+                      >A copy of my data</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="request" value="correct" /><span
+                      >A correction</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="request" value="erase" /><span
+                      >Erase my messages to you</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="request" value="other" /><span
+                      >Something else</span
+                    ></label
+                  >
+                </div>
+              </fieldset>
+              <fieldset class="field field-wide" data-topics="question bug">
+                <legend>
+                  <span data-topics="question">Which app is it about?</span
+                  ><span data-topics="bug" hidden>Where did it happen?</span>
+                  <span class="hint">(optional)</span>
+                </legend>
+                <div class="chips">
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="iphone" /><span
+                      >iPhone or iPad</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="android" /><span
+                      >Android</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="apple-watch" /><span
+                      >Apple Watch</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="wear-os" /><span
+                      >Wear OS</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="web" /><span>Web</span></label
+                  >
+                </div>
+              </fieldset>
+              <div class="field field-wide" data-topics="bug" hidden>
                 <label for="device"
                   >Device and app version <span class="hint">(optional)</span></label
                 >
@@ -938,23 +1011,53 @@
                   maxlength="100"
                   placeholder="e.g. iPhone 16, iOS 27, Daily Ring 1.0"
                 />
+                <p class="field-help">
+                  The app’s version is at the bottom of Habits → Settings.
+                </p>
               </div>
               <div class="field field-wide">
-                <label for="message">Message</label>
+                <label for="message"
+                  ><span data-topics="question">Your question</span
+                  ><span data-topics="bug" hidden>What happened?</span
+                  ><span data-topics="idea" hidden>Your idea</span
+                  ><span data-topics="delete" hidden>Anything we should know</span
+                  ><span data-topics="privacy" hidden>Details</span
+                  ><span data-topics="other" hidden>Message</span>
+                  <span class="hint message-optional" hidden>(optional)</span></label
+                >
                 <textarea
                   id="message"
                   name="message"
                   minlength="2"
                   maxlength="5000"
                   required
+                  placeholder="Ask about anything in the app."
+                  data-placeholder-bug="What you did, what you expected, and what happened instead."
+                  data-placeholder-idea="What would you like Daily Ring to do, and what would it help you with?"
+                  data-placeholder-delete="For example, if you added more than one email."
+                  data-placeholder-privacy="What should we correct, or anything that helps us find your data."
+                  data-placeholder-other="How can we help?"
                 ></textarea>
               </div>
+              <label class="check field-wide" data-topics="delete" hidden
+                ><input type="checkbox" name="confirm" value="yes" required /><span
+                  >I understand this permanently deletes my habits and history, and cannot be
+                  undone.</span
+                ></label
+              >
               <div class="field-trap" aria-hidden="true">
                 <label for="website">Leave this empty</label>
                 <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
               </div>
               <div class="form-foot">
-                <button class="button button-primary" type="submit">Send message</button>
+                <button class="button button-primary" type="submit">
+                  <span data-topics="question">Send question</span
+                  ><span data-topics="bug" hidden>Report the problem</span
+                  ><span data-topics="idea" hidden>Send idea</span
+                  ><span data-topics="delete" hidden>Request deletion</span
+                  ><span data-topics="privacy" hidden>Send request</span
+                  ><span data-topics="other" hidden>Send message</span>
+                </button>
                 <p class="note">
                   We use your email only to reply. See the
                   <a href="privacy.html#contact">privacy policy</a>.

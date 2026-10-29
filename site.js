@@ -435,6 +435,75 @@ function enhanceTopicPicker(select) {
   render();
 }
 
+// The phone a visitor is browsing on, if it is one: the likeliest place for the
+// problem they are reporting. Only the platform is guessed, never the OS version,
+// which current browsers freeze or round in the user agent.
+function guessPlatform() {
+  const ua = navigator.userAgent;
+  // iPadOS asks for desktop pages as a Mac; the touch screen gives it away.
+  if (/iPhone|iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) {
+    return 'iphone';
+  }
+  return /Android/.test(ua) ? 'android' : null;
+}
+
+// Fields that follow the topic. Everything in the form carrying data-topics is
+// shown only for the topics it names; hidden fields are also disabled, so they are
+// neither validated nor sent. The message's label, placeholder and whether it is
+// required follow too: a deletion, or a privacy request for a copy or an erasure,
+// needs nothing more than the choice itself.
+function followTopic(form) {
+  const message = form.message;
+  const optionalHint = form.querySelector('.message-optional');
+  const blocks = '.field, .topic-note, .check';
+  let shown = null;
+
+  function sync() {
+    const topic = form.topic.value;
+    const request = form.request?.value;
+    for (const el of form.querySelectorAll('[data-topics]')) {
+      const visible = el.dataset.topics.split(' ').includes(topic);
+      // Animate a block in, but not on load or when the topic is unchanged.
+      if (visible && el.hidden && shown !== null && el.matches(blocks)) {
+        el.classList.remove('topic-in');
+        void el.offsetWidth;
+        el.classList.add('topic-in');
+      }
+      el.hidden = !visible;
+      if (el.matches('fieldset, input, select, textarea')) el.disabled = !visible;
+      else el.querySelectorAll('input, select, textarea').forEach((i) => (i.disabled = !visible));
+    }
+
+    const key = `placeholder${topic[0].toUpperCase()}${topic.slice(1)}`;
+    message.placeholder = message.dataset[key] ?? message.getAttribute('placeholder');
+    const optional =
+      topic === 'delete' || (topic === 'privacy' && ['copy', 'erase'].includes(request));
+    message.required = !optional;
+    optionalHint.hidden = !optional;
+
+    // A bug is most often on the phone in hand, so start there; any choice the
+    // visitor makes stands.
+    if (topic === 'bug' && shown !== 'bug' && !form.querySelector('[name="platform"]:checked')) {
+      const guess = guessPlatform();
+      if (guess) form.querySelector(`[name="platform"][value="${guess}"]`).checked = true;
+    }
+    shown = topic;
+  }
+
+  // The question's placeholder, kept for switching back.
+  message.dataset.placeholderQuestion = message.getAttribute('placeholder');
+  form.topic.addEventListener('change', sync);
+  form.addEventListener('change', (event) => event.target.name === 'request' && sync());
+  // reset fires before the form's controls are reset.
+  form.addEventListener('reset', () =>
+    setTimeout(() => {
+      shown = null;
+      sync();
+    })
+  );
+  sync();
+}
+
 // Support form. Its messages follow the page's language: the French pages under
 // fr/ share this script.
 (() => {
@@ -452,6 +521,7 @@ function enhanceTopicPicker(select) {
     form.topic.value = topic;
   }
   enhanceTopicPicker(form.topic);
+  followTopic(form);
 
   const setStatus = (text, kind) => {
     status.textContent = text;

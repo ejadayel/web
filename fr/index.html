@@ -922,8 +922,8 @@
               </p>
               <ul>
                 <li>
-                  <span>🐞</span
-                  ><span>Pour un bogue, indiquez votre appareil et la version de l’app.</span>
+                  <span>🧭</span
+                  ><span>Choisissez un sujet : le formulaire ne demande que ce qui nous aide.</span>
                 </li>
                 <li>
                   <span>💡</span
@@ -945,7 +945,12 @@
                 <input id="name" name="name" type="text" autocomplete="name" maxlength="100" />
               </div>
               <div class="field">
-                <label for="email">Courriel</label>
+                <label for="email"
+                  ><span data-topics="question bug idea other">Courriel</span
+                  ><span data-topics="delete privacy" hidden
+                    >Courriel de votre compte Daily Ring</span
+                  ></label
+                >
                 <input
                   id="email"
                   name="email"
@@ -966,7 +971,75 @@
                   <option value="other" data-hint="Tout ce qui n’entre pas ci-dessus">Autre chose</option>
                 </select>
               </div>
-              <div class="field field-wide">
+              <!-- The fields below follow the topic: site.js shows each one whose
+                   data-topics names it. As loaded, without JS, they are set up for
+                   a question. -->
+              <div class="topic-note field-wide" data-topics="delete" hidden>
+                <p>
+                  <strong>Vous avez encore l’app ?</strong> Habitudes → Compte → Supprimer le
+                  compte l’efface tout de suite. Utilisez ce formulaire si vous ne l’avez plus :
+                  nous écrirons au courriel ci-dessus pour confirmer que la demande vient de vous.
+                  <a href="delete-account.html">Comment se passe la suppression</a>
+                </p>
+              </div>
+              <fieldset class="field field-wide" data-topics="privacy" hidden>
+                <legend>Que souhaitez-vous ?</legend>
+                <div class="chips">
+                  <label class="chip"
+                    ><input type="radio" name="request" value="copy" checked /><span
+                      >Une copie de mes données</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="request" value="correct" /><span
+                      >Une correction</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="request" value="erase" /><span
+                      >Effacer mes messages</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="request" value="other" /><span
+                      >Autre chose</span
+                    ></label
+                  >
+                </div>
+              </fieldset>
+              <fieldset class="field field-wide" data-topics="question bug">
+                <legend>
+                  <span data-topics="question">Quelle app est concernée ?</span
+                  ><span data-topics="bug" hidden>Où est-ce arrivé ?</span>
+                  <span class="hint">(facultatif)</span>
+                </legend>
+                <div class="chips">
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="iphone" /><span
+                      >iPhone ou iPad</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="android" /><span
+                      >Android</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="apple-watch" /><span
+                      >Apple Watch</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="wear-os" /><span
+                      >Wear OS</span
+                    ></label
+                  >
+                  <label class="chip"
+                    ><input type="radio" name="platform" value="web" /><span>Web</span></label
+                  >
+                </div>
+              </fieldset>
+              <div class="field field-wide" data-topics="bug" hidden>
                 <label for="device"
                   >Appareil et version de l’app <span class="hint">(facultatif)</span></label
                 >
@@ -977,23 +1050,53 @@
                   maxlength="100"
                   placeholder="ex. iPhone 16, iOS 27, Daily Ring 1.0"
                 />
+                <p class="field-help">
+                  La version de l’app se trouve en bas de Habitudes → Réglages.
+                </p>
               </div>
               <div class="field field-wide">
-                <label for="message">Message</label>
+                <label for="message"
+                  ><span data-topics="question">Votre question</span
+                  ><span data-topics="bug" hidden>Que s’est-il passé ?</span
+                  ><span data-topics="idea" hidden>Votre idée</span
+                  ><span data-topics="delete" hidden>Quelque chose à nous dire</span
+                  ><span data-topics="privacy" hidden>Précisions</span
+                  ><span data-topics="other" hidden>Message</span>
+                  <span class="hint message-optional" hidden>(facultatif)</span></label
+                >
                 <textarea
                   id="message"
                   name="message"
                   minlength="2"
                   maxlength="5000"
                   required
+                  placeholder="Posez-nous une question sur l’app."
+                  data-placeholder-bug="Ce que vous avez fait, ce que vous attendiez, et ce qui s’est passé à la place."
+                  data-placeholder-idea="Que voudriez-vous que Daily Ring fasse, et en quoi cela vous aiderait-il ?"
+                  data-placeholder-delete="Par exemple, si vous avez ajouté plus d’un courriel."
+                  data-placeholder-privacy="Ce qu’il faut corriger, ou tout ce qui nous aide à retrouver vos données."
+                  data-placeholder-other="Comment pouvons-nous vous aider ?"
                 ></textarea>
               </div>
+              <label class="check field-wide" data-topics="delete" hidden
+                ><input type="checkbox" name="confirm" value="yes" required /><span
+                  >Je comprends que cela efface définitivement mes habitudes et mon historique,
+                  sans retour possible.</span
+                ></label
+              >
               <div class="field-trap" aria-hidden="true">
                 <label for="website">Laissez ce champ vide</label>
                 <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
               </div>
               <div class="form-foot">
-                <button class="button button-primary" type="submit">Envoyer le message</button>
+                <button class="button button-primary" type="submit">
+                  <span data-topics="question">Envoyer la question</span
+                  ><span data-topics="bug" hidden>Signaler le problème</span
+                  ><span data-topics="idea" hidden>Envoyer l’idée</span
+                  ><span data-topics="delete" hidden>Demander la suppression</span
+                  ><span data-topics="privacy" hidden>Envoyer la demande</span
+                  ><span data-topics="other" hidden>Envoyer le message</span>
+                </button>
                 <p class="note">
                   Nous utilisons votre courriel uniquement pour vous répondre. Voir la
                   <a href="privacy.html#contact">politique de confidentialité</a>.
