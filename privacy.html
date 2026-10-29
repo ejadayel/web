@@ -197,6 +197,13 @@
           connections (HTTPS), and the database only lets each account read and write its own rows.
         </p>
         <p>
+          Once a night we also make a copy of the database, so that we can recover from a mistake or
+          an outage. Each copy is encrypted with a key only we hold before it is stored with
+          <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+            >GitHub</a
+          >, in the United States, so GitHub cannot read it, and each copy is deleted after 30 days.
+        </p>
+        <p>
           Emails about your account, such as a password reset code, and messages from the contact
           form, which pass through a Supabase function, are sent by our email provider,
           <a href="https://resend.com/legal/privacy-policy">Resend</a>, in the United States. Resend
@@ -236,6 +243,12 @@
           match it to you afterwards. We periodically delete anonymous accounts that have not been
           used for 30 days, along with all their data. If you are on a break, the 30 days count from
           the day it ends.
+        </p>
+        <p>
+          Our encrypted nightly copies of the database are each deleted after 30 days, so anything
+          deleted from our server, by you or by us, is gone from every copy within 30 days. We would
+          only use a copy to recover from a failure, and would then delete again anything that had
+          been deleted since it was made.
         </p>
 
         <h2>Your choices and rights</h2>
