@@ -542,6 +542,15 @@ function followTopic(form) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...data, startedAt }),
       });
+      if (response.status === 429) {
+        setStatus(
+          fr
+            ? 'Trop de messages envoyés depuis cette connexion. Réessayez dans une heure.'
+            : 'Too many messages from this connection. Please try again in an hour.',
+          'error'
+        );
+        return;
+      }
       if (!response.ok) throw new Error(String(response.status));
       form.reset();
       setStatus(
