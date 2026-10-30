@@ -7,6 +7,10 @@
 // already public (it ships in the app), and the function needs no key.
 const CONTACT_ENDPOINT = 'https://csapfwigvxyasodfiejy.supabase.co/functions/v1/contact';
 
+// Lets the confirmation link's leftover session be revoked. Publishable by
+// design: it ships in the app and identifies the project; RLS guards the data.
+const SUPABASE_KEY = 'sb_publishable_vAQ6cdTuxk6fakum5fxgjQ_irWdT8iF';
+
 // The store listings, once they are live. An empty string keeps that store's
 // badge as "coming soon" text; a URL turns it into a download link on every page.
 const STORE_LINKS = {
@@ -570,4 +574,74 @@ function followTopic(form) {
       button.disabled = false;
     }
   });
+})();
+
+// Back from an email confirmation link: the app's Site URL is this page.
+// - Supabase appends the outcome to the hash: a session, or an error
+// - The hash leaves the address bar and history straight away
+// - The session it carries is revoked: the app has its own, this one is unused
+// - A short message says what happened, in the page's or browser's language
+(() => {
+  const params = new URLSearchParams(location.hash.slice(1));
+  const token = params.get('access_token');
+  const error = params.get('error_code') || params.get('error');
+  const message = params.get('message');
+  if (!token && !error && !message) return;
+
+  history.replaceState(null, '', location.pathname + location.search);
+
+  if (token) {
+    fetch('https://csapfwigvxyasodfiejy.supabase.co/auth/v1/logout?scope=local', {
+      method: 'POST',
+      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${token}` },
+      keepalive: true,
+    }).catch(() => {});
+  }
+
+  const fr = document.documentElement.lang === 'fr' || /^fr\b/i.test(navigator.language || '');
+  const copy = fr
+    ? {
+        ok: [
+          'Courriel confirmé',
+          'Retournez dans Daily Ring\u00a0: vos habitudes sont maintenant sauvegardées sous cette adresse.',
+        ],
+        step: ['Encore une étape', 'Confirmez aussi avec le lien envoyé à votre autre adresse.'],
+        expired: [
+          'Ce lien a expiré',
+          'Il a peut-être déjà servi. Dans Daily Ring, ouvrez Habitudes → Compte pour en recevoir un nouveau.',
+        ],
+        close: 'Fermer',
+      }
+    : {
+        ok: [
+          'Email confirmed',
+          'Head back to Daily Ring: your habits are now saved under this address.',
+        ],
+        step: ['One more step', 'Also confirm with the link sent to your other address.'],
+        expired: [
+          'This link has expired',
+          'It may have been used already. In Daily Ring, open Habits → Account to get a new one.',
+        ],
+        close: 'Close',
+      };
+  const kind = token ? 'ok' : error ? 'expired' : 'step';
+  const [title, body] = copy[kind];
+
+  const notice = document.createElement('div');
+  notice.className = `auth-notice auth-notice-${kind}`;
+  notice.setAttribute('role', 'status');
+  const text = document.createElement('div');
+  const strong = document.createElement('strong');
+  strong.textContent = title;
+  const p = document.createElement('p');
+  p.textContent = body;
+  text.append(strong, p);
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'auth-notice-close';
+  close.setAttribute('aria-label', copy.close);
+  close.textContent = '×';
+  close.addEventListener('click', () => notice.remove());
+  notice.append(text, close);
+  document.body.append(notice);
 })();
