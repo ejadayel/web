@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test Daily Ring on Android · Daily Ring</title>
+    <meta
+      name="description"
+      content="How to join the Daily Ring closed test on Google Play, step by step, once your email is on the testers list."
+    />
+    <meta name="theme-color" content="#2f7fe8" />
+    <script>
+      // Before first paint, so a pinned theme never flashes the other one. site.js draws the switch.
+      document.documentElement.classList.add('theme-js');
+      try {
+        var theme = localStorage.getItem('daily-ring-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
+    <link rel="icon" href="icon.png" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="alternate" hreflang="en" href="https://dailyring.ca/play-testing.html" />
+    <link rel="alternate" hreflang="fr" href="https://dailyring.ca/fr/play-testing.html" />
+    <link rel="alternate" hreflang="x-default" href="https://dailyring.ca/play-testing.html" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="icon.png" alt="" /><span class="brand-name">Daily Ring</span></a>
+        <nav aria-label="Main">
+          <a class="nav-hide-sm" href="index.html#features">Features</a>
+          <a class="nav-hide-sm" href="index.html#faq">Help</a>
+          <a class="nav-hide-xs" href="privacy.html">Privacy</a>
+          <a class="nav-hide-sm" href="index.html#contact">Contact</a>
+          <a class="nav-cta" href="index.html#download">Get the app</a>
+          <button class="theme-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Theme"></button>
+          <a class="lang" href="fr/play-testing.html" hreflang="fr" lang="fr" title="Français">FR</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <span class="pill meta">Beta testers · Android</span>
+          <h1>Test Daily Ring on Google Play</h1>
+          <p class="lede">
+            Thank you for testing. Your email is already on the testers list, so all that is left
+            is four steps on your phone, then fourteen days of using the app.
+          </p>
+          <nav class="platform-switch" aria-label="Platform">
+            <a href="testflight.html">iPhone and iPad</a>
+            <a href="play-testing.html" aria-current="page">Android</a>
+          </nav>
+        </div>
+      </section>
+
+      <div class="guide" style="--accent: var(--c-green)">
+        <ul class="guide-facts">
+          <li><strong>About 5 minutes</strong><span>From the link to your first check-off</span></li>
+          <li><strong>Your Android phone</strong><span>Signed in with the Google account you gave us</span></li>
+          <li><strong>14 days</strong><span>Stay in the test that long; it is what Google asks</span></li>
+        </ul>
+
+        <ol class="gsteps">
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">1</span>
+              <h2>Use the Google account you gave us</h2>
+              <p>
+                Only the email address on the testers list can join. Open the
+                <strong>Play Store</strong>, tap your profile picture in the top corner, and check
+                that it is the same Gmail or Google account. If not, tap the arrow beside it and
+                switch.
+              </p>
+              <p class="muted">
+                Several accounts on one phone is the most common reason the test does not show up.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock mock-android" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-row">
+                    <div class="mock-url" style="flex: 1">Search apps &amp; games</div>
+                    <span class="mock-avatar tap">A</span>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-row">
+                      <span class="mock-avatar">A</span>
+                      <span style="flex: 1"><b>The tester account</b><br /><span class="mock-small">the email you gave us</span></span>
+                      <span class="mock-check">✓</span>
+                    </div>
+                    <div class="mock-row">
+                      <span class="mock-avatar" style="background: var(--c-teal)">W</span>
+                      <span style="flex: 1" class="mock-small">another account</span>
+                    </div>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line w60"></div>
+                </div>
+              </div>
+              <figcaption>Tap your picture to see which account is active</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">2</span>
+              <h2>Open the test link and become a tester</h2>
+              <p>
+                On your phone, open the link below. Make sure it opens signed in with that same
+                account, then tap <strong>Become a tester</strong>. The page then says you are a
+                tester.
+              </p>
+              <p>
+                <a class="button button-primary" href="https://play.google.com/apps/testing/com.ejadayel.habittracker">Open the test link</a>
+              </p>
+              <p class="muted">
+                It also works from a computer’s browser, signed in to the same Google account.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock mock-android" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-url">play.google.com/apps/testing/…</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <img src="icon.png" alt="" />
+                      <div><b>Daily Ring</b><small>Closed test</small></div>
+                    </div>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                    <span class="mock-btn primary tap">Become a tester</span>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+              <figcaption>A simplified drawing of the test page</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">3</span>
+              <h2>Install it from Google Play</h2>
+              <p>
+                On the same page, tap <strong>download it on Google Play</strong>, or use the button
+                below. Daily Ring opens in the Play Store: tap <strong>Install</strong>.
+              </p>
+              <p>
+                <a class="button" href="https://play.google.com/store/apps/details?id=com.ejadayel.habittracker">Daily Ring on Google Play</a>
+              </p>
+              <div class="tip">
+                <p>
+                  <strong>“Item not found”?</strong> Joining can take a few minutes to reach the
+                  Play Store. Wait a little and try again, and check the account from step 1.
+                </p>
+              </div>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock mock-android" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-app" style="margin-top: 8px">
+                    <img src="icon.png" alt="" />
+                    <div><b>Daily Ring</b><small>Habit tracker</small></div>
+                  </div>
+                  <span class="mock-btn primary tap">Install</span>
+                  <div class="mock-card">
+                    <b>You’re a tester</b>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+              <figcaption>The Daily Ring page in the Play Store</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">4</span>
+              <h2>Open Daily Ring and check something off</h2>
+              <p>
+                There is no sign-up. Daily Ring opens with three example habits you can rename,
+                change or delete. Tap a ring to check a habit off for today.
+              </p>
+              <p class="muted">Next: <a href="#plus">save your progress, then get Plus Lifetime free</a>.</p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="shot">
+                <img src="images/android-today.jpg" alt="The Today tab in Daily Ring on Android, with two of five habits done" width="720" height="993" loading="lazy" />
+              </div>
+              <figcaption>The Today tab</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">★</span>
+              <h2>Keep it for 14 days</h2>
+              <p>
+                This is the part that matters most. Google lets a new app into the Play Store only
+                after enough testers have stayed in its closed test for 14 days in a row. Please
+                keep Daily Ring installed and stay opted in for at least that long.
+              </p>
+              <p class="muted">
+                Using it every day helps even more: a few check-offs a day is a real test, and it
+                gets you the confetti.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="shot">
+                <img src="images/android-confetti.jpg" alt="Daily Ring celebrating a day with every habit done" width="720" height="993" loading="lazy" />
+              </div>
+              <figcaption>What a finished day looks like</figcaption>
+            </figure>
+          </li>
+        </ol>
+
+
+        <section class="flows" id="plus" aria-labelledby="plus-title">
+          <div class="flows-head">
+            <h2 id="plus-title">Save your progress, then get Plus free</h2>
+            <p class="order">
+              <span style="--accent: var(--brand)"><b>1</b>Save your progress</span>
+              <i aria-hidden="true">→</i>
+              <span style="--accent: var(--c-amber)"><b>2</b>Plus Lifetime, free</span>
+            </p>
+          </div>
+
+          <div class="flow" style="--accent: var(--brand)">
+            <h3><b aria-hidden="true">1</b>Save your progress</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="images/android-account.jpg" alt="The Habits tab on Android, with the Account row ringed" width="720" height="990" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:4.7%;top:63.4%;width:89.4%;height:12.7%"></span></div></div><figcaption>Habits → Account</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="images/android-save.jpg" alt="The Account sheet: email, password and confirm password, then Save progress" width="720" height="1102" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:8.4%;top:56.1%;width:83.1%;height:24.1%"></span><span class="ring" data-n=2 style="left:8.4%;top:86.5%;width:83.1%;height:6.9%"></span></div></div><figcaption>Email, password twice → Save progress</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-card"><span class="mock-small">Daily Ring</span><span class="mock-mail-title">Confirm your email</span><div class="mock-line w80"></div><div class="mock-line w60"></div><span class="mock-btn primary tap">Confirm email</span></div></div></div><figcaption>Tap Confirm email</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge">✓</span><b>Email confirmed</b><span class="mock-small">Head back to Daily Ring</span></div></div></div><figcaption>Saved</figcaption></figure></li>
+            </ol>
+          </div>
+
+          <div class="flow" style="--accent: var(--c-amber)">
+            <h3><b aria-hidden="true">2</b>Plus Lifetime, free</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="images/android-get-plus.jpg" alt="The Habits tab on Android, with the Get Plus button ringed" width="720" height="956" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:59.4%;top:5.2%;width:25.3%;height:7.5%"></span></div></div><figcaption>Get Plus</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="images/beta-lifetime.jpg" alt="The Plus sheet with Lifetime selected and the Buy button ringed" width="720" height="863" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:6.2%;top:46.3%;width:87.6%;height:16.2%"></span><span class="ring" data-n=2 style="left:6.2%;top:72.8%;width:87.6%;height:11.0%"></span></div></div><figcaption>Lifetime → Buy</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-sheet"><div class="mock-app"><img src="icon.png" alt="" /><div><b>Daily Ring Plus · Lifetime</b><small>Google Play</small></div></div><div class="mock-row"><span class="mock-small">💳 Test card, always approves</span></div><span class="free-chip">$0 · test card</span><span class="mock-btn primary tap">Buy</span></div></div></div><figcaption>Buy · test card, $0</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge plus">✦</span><b>Welcome to Plus</b><span class="mock-small">Lifetime · yours for good</span></div></div></div><figcaption>Lifetime · yours for good</figcaption></figure></li>
+            </ol>
+            <p class="flow-note">Prices on screen are the store’s. As a tester, you pay nothing.</p>
+          </div>
+        </section>
+
+        <h2 class="guide-section">While you test</h2>
+        <div class="guide-after">
+          <div>
+            <h3>Updates come through the Play Store</h3>
+            <p>
+              New test versions arrive as ordinary updates. If automatic updates are on in the
+              Play Store, there is nothing to do.
+            </p>
+          </div>
+          <div>
+            <h3>Send feedback</h3>
+            <p>
+              Use the <a href="index.html?topic=bug#contact">contact form</a> for anything odd,
+              broken or confusing, and for ideas. Your device model and Android version help.
+            </p>
+          </div>
+          <div>
+            <h3>Plus is free for testers</h3>
+            <p>
+              Your purchase goes through a Google Play test card, so nothing is charged. Pick
+              <a href="#plus">Lifetime</a>.
+            </p>
+          </div>
+          <div>
+            <h3>Your data carries over</h3>
+            <p>
+              The test version is the real app. When Daily Ring is released, you simply get it as
+              an update, with your habits and history.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="guide-section">If something goes wrong</h2>
+        <div class="faq">
+          <details>
+            <summary>The link says I can’t join, or the app isn’t available</summary>
+            <p>
+              The link is open only to email addresses on the testers list. Check the account in
+              the browser that opened it, or open the link in a private window and sign in with
+              the right one. If it is the right account, tell us through the
+              <a href="index.html?topic=question#contact">contact form</a> so we can check the
+              list.
+            </p>
+          </details>
+          <details>
+            <summary>I joined, but the Play Store still doesn’t show Daily Ring</summary>
+            <p>
+              Give it up to an hour, then close and reopen the Play Store. Searching for it may not
+              work during a closed test, so use the Google Play button in step 3 instead.
+            </p>
+          </details>
+          <details>
+            <summary>My email isn’t a Gmail address</summary>
+            <p>
+              It needs to be the address of a Google account. Any email can be one: create a Google
+              account with it, or send us your Gmail address instead.
+            </p>
+          </details>
+          <details>
+            <summary>How do I leave the test?</summary>
+            <p>
+              Open the test link again and tap <strong>Leave the program</strong>, then uninstall
+              the app. If you added an email, delete the account first under
+              <strong>Habits → Account → Delete account</strong> to remove its data;
+              <a href="delete-account.html">here is how</a>.
+            </p>
+          </details>
+        </div>
+
+        <div class="guide-end">
+          <p>
+            Something odd, or an idea? Tell us. Every message is read, and the test exists to find
+            exactly that.
+          </p>
+          <a class="button button-primary" href="index.html?topic=bug#contact">Report a problem</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="icon.png" alt="" />Daily Ring</a>
+        <nav aria-label="Footer">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#faq">Help</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms of sale</a>
+          <a href="delete-account.html">Delete your account</a>
+          <a href="testflight.html">Beta on iPhone</a>
+          <a href="play-testing.html">Beta on Android</a>
+          <a href="fr/play-testing.html" hreflang="fr" lang="fr">Français</a>
+        </nav>
+        <p class="copy">Made by an independent developer. Free, with no ads.</p>
+      </div>
+    </footer>
+  </body>
+</html>

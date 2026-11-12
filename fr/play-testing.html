@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tester Daily Ring sur Android · Daily Ring</title>
+    <meta
+      name="description"
+      content="Comment rejoindre le test fermé de Daily Ring sur Google Play, étape par étape, une fois votre adresse sur la liste des testeurs."
+    />
+    <meta name="theme-color" content="#2f7fe8" />
+    <script>
+      // Before first paint, so a pinned theme never flashes the other one. site.js draws the switch.
+      document.documentElement.classList.add('theme-js');
+      try {
+        var theme = localStorage.getItem('daily-ring-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
+    <link rel="icon" href="../icon.png" />
+    <link rel="apple-touch-icon" href="../icon.png" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="alternate" hreflang="en" href="https://dailyring.ca/play-testing.html" />
+    <link rel="alternate" hreflang="fr" href="https://dailyring.ca/fr/play-testing.html" />
+    <link rel="alternate" hreflang="x-default" href="https://dailyring.ca/play-testing.html" />
+    <script src="../site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <header class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="../icon.png" alt="" /><span class="brand-name">Daily Ring</span></a>
+        <nav aria-label="Menu principal">
+          <a class="nav-hide-sm" href="index.html#features">Fonctionnalités</a>
+          <a class="nav-hide-sm" href="index.html#faq">Aide</a>
+          <a class="nav-hide-xs" href="privacy.html">Vie privée</a>
+          <a class="nav-hide-sm" href="index.html#contact">Contact</a>
+          <a class="nav-cta" href="index.html#download">Obtenir l’app</a>
+          <button class="theme-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Thème"></button>
+          <a class="lang" href="../play-testing.html" hreflang="en" lang="en" title="English">EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <span class="pill meta">Bêta-testeurs · Android</span>
+          <h1>Tester Daily Ring sur Google Play</h1>
+          <p class="lede">
+            Merci de tester. Votre adresse est déjà sur la liste des testeurs : il ne reste que
+            quatre étapes sur votre téléphone, puis quatorze jours d’utilisation.
+          </p>
+          <nav class="platform-switch" aria-label="Plateforme">
+            <a href="testflight.html">iPhone et iPad</a>
+            <a href="play-testing.html" aria-current="page">Android</a>
+          </nav>
+        </div>
+      </section>
+
+      <div class="guide" style="--accent: var(--c-green)">
+        <ul class="guide-facts">
+          <li><strong>Environ 5 minutes</strong><span>Du lien à votre première habitude cochée</span></li>
+          <li><strong>Votre téléphone Android</strong><span>Connecté au compte Google que vous nous avez donné</span></li>
+          <li><strong>14 jours</strong><span>Restez dans le test au moins ce temps ; c’est ce que Google demande</span></li>
+        </ul>
+
+        <ol class="gsteps">
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">1</span>
+              <h2>Utilisez le compte Google que vous nous avez donné</h2>
+              <p>
+                Seule l’adresse inscrite sur la liste des testeurs peut rejoindre le test. Ouvrez le
+                <strong>Play Store</strong>, touchez votre photo de profil en haut et vérifiez qu’il
+                s’agit du même compte Gmail ou Google. Sinon, touchez la flèche à côté et changez
+                de compte.
+              </p>
+              <p class="muted">
+                Plusieurs comptes sur un même téléphone : c’est la raison la plus fréquente pour
+                laquelle le test n’apparaît pas.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock mock-android" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-row">
+                    <div class="mock-url" style="flex: 1">Rechercher des applis</div>
+                    <span class="mock-avatar tap">A</span>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-row">
+                      <span class="mock-avatar">A</span>
+                      <span style="flex: 1"><b>Le compte testeur</b><br /><span class="mock-small">l’adresse que vous nous avez donnée</span></span>
+                      <span class="mock-check">✓</span>
+                    </div>
+                    <div class="mock-row">
+                      <span class="mock-avatar" style="background: var(--c-teal)">W</span>
+                      <span style="flex: 1" class="mock-small">un autre compte</span>
+                    </div>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line w60"></div>
+                </div>
+              </div>
+              <figcaption>Touchez votre photo pour voir le compte actif</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">2</span>
+              <h2>Ouvrez le lien du test et devenez testeur</h2>
+              <p>
+                Sur votre téléphone, ouvrez le lien ci-dessous. Vérifiez qu’il s’ouvre avec ce même
+                compte, puis touchez <strong>Devenir testeur</strong>. La page confirme ensuite que
+                vous êtes testeur.
+              </p>
+              <p>
+                <a class="button button-primary" href="https://play.google.com/apps/testing/com.ejadayel.habittracker">Ouvrir le lien du test</a>
+              </p>
+              <p class="muted">
+                Le lien fonctionne aussi depuis le navigateur d’un ordinateur, connecté au même
+                compte Google.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock mock-android" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-url">play.google.com/apps/testing/…</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <img src="../icon.png" alt="" />
+                      <div><b>Daily Ring</b><small>Test fermé</small></div>
+                    </div>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                    <span class="mock-btn primary tap">Devenir testeur</span>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+              <figcaption>Un dessin simplifié de la page du test</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">3</span>
+              <h2>Installez-la depuis Google Play</h2>
+              <p>
+                Sur la même page, touchez le lien vers <strong>Google Play</strong>, ou utilisez le
+                bouton ci-dessous. Daily Ring s’ouvre dans le Play Store : touchez
+                <strong>Installer</strong>.
+              </p>
+              <p>
+                <a class="button" href="https://play.google.com/store/apps/details?id=com.ejadayel.habittracker">Daily Ring sur Google Play</a>
+              </p>
+              <div class="tip">
+                <p>
+                  <strong>« Article introuvable » ?</strong> Votre inscription peut prendre
+                  quelques minutes à atteindre le Play Store. Patientez un peu, réessayez, et
+                  vérifiez le compte de l’étape 1.
+                </p>
+              </div>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock mock-android" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-app" style="margin-top: 8px">
+                    <img src="../icon.png" alt="" />
+                    <div><b>Daily Ring</b><small>Suivi d’habitudes</small></div>
+                  </div>
+                  <span class="mock-btn primary tap">Installer</span>
+                  <div class="mock-card">
+                    <b>Vous êtes testeur</b>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+              <figcaption>La page de Daily Ring dans le Play Store</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">4</span>
+              <h2>Ouvrez Daily Ring et cochez une habitude</h2>
+              <p>
+                Aucune inscription. Daily Ring s’ouvre avec trois habitudes d’exemple que vous
+                pouvez renommer, modifier ou supprimer. Touchez un anneau pour cocher une habitude
+                aujourd’hui.
+              </p>
+              <p class="muted">Ensuite : <a href="#plus">sauvegardez vos progrès, puis obtenez Plus à vie gratuitement</a>.</p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="shot">
+                <img src="../images/fr/android-today.jpg" alt="L’onglet Aujourd’hui de Daily Ring sur Android, avec deux habitudes sur cinq faites" width="720" height="993" loading="lazy" />
+              </div>
+              <figcaption>L’onglet Aujourd’hui</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">★</span>
+              <h2>Gardez-la 14 jours</h2>
+              <p>
+                C’est l’étape la plus importante. Google n’accepte une nouvelle app sur le Play
+                Store qu’une fois que suffisamment de testeurs sont restés dans son test fermé
+                14 jours d’affilée. Gardez Daily Ring installée et restez inscrit au moins
+                aussi longtemps.
+              </p>
+              <p class="muted">
+                L’utiliser chaque jour aide encore plus : quelques habitudes cochées par jour, c’est
+                un vrai test, et vous aurez droit aux confettis.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="shot">
+                <img src="../images/fr/android-confetti.jpg" alt="Daily Ring qui célèbre une journée où toutes les habitudes sont faites" width="720" height="993" loading="lazy" />
+              </div>
+              <figcaption>Une journée terminée</figcaption>
+            </figure>
+          </li>
+        </ol>
+
+
+        <section class="flows" id="plus" aria-labelledby="plus-title">
+          <div class="flows-head">
+            <h2 id="plus-title">Sauvegardez vos progrès, puis obtenez Plus gratuitement</h2>
+            <p class="order">
+              <span style="--accent: var(--brand)"><b>1</b>Sauvegardez vos progrès</span>
+              <i aria-hidden="true">→</i>
+              <span style="--accent: var(--c-amber)"><b>2</b>Plus à vie, gratuit</span>
+            </p>
+          </div>
+
+          <div class="flow" style="--accent: var(--brand)">
+            <h3><b aria-hidden="true">1</b>Sauvegardez vos progrès</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="../images/fr/android-account.jpg" alt="L’onglet Habitudes sur Android, avec la ligne Compte entourée" width="720" height="990" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:4.7%;top:62.0%;width:90.0%;height:12.7%"></span></div></div><figcaption>Habitudes → Compte</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="../images/fr/android-save.jpg" alt="La fiche Compte : courriel, mot de passe et confirmation, puis Sauvegarder" width="720" height="1102" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:8.4%;top:56.1%;width:83.1%;height:24.1%"></span><span class="ring" data-n=2 style="left:8.4%;top:86.5%;width:83.1%;height:6.9%"></span></div></div><figcaption>Courriel, mot de passe ×2 → Sauvegarder</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-card"><span class="mock-small">Daily Ring</span><span class="mock-mail-title">Confirmez votre courriel</span><div class="mock-line w80"></div><div class="mock-line w60"></div><span class="mock-btn primary tap">Confirmer le courriel</span></div></div></div><figcaption>Touchez Confirmer le courriel</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge">✓</span><b>Courriel confirmé</b><span class="mock-small">Retournez dans Daily Ring</span></div></div></div><figcaption>Sauvegardé</figcaption></figure></li>
+            </ol>
+          </div>
+
+          <div class="flow" style="--accent: var(--c-amber)">
+            <h3><b aria-hidden="true">2</b>Plus à vie, gratuit</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="../images/fr/android-get-plus.jpg" alt="L’onglet Habitudes sur Android, avec le bouton Obtenir Plus entouré" width="720" height="956" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:53.8%;top:5.2%;width:30.9%;height:7.5%"></span></div></div><figcaption>Obtenir Plus</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="../images/fr/beta-lifetime.jpg" alt="La fiche Plus avec À vie choisi et le bouton Acheter entouré" width="720" height="854" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:6.2%;top:45.7%;width:87.6%;height:16.6%"></span><span class="ring" data-n=2 style="left:6.2%;top:72.5%;width:87.6%;height:11.1%"></span></div></div><figcaption>À vie → Acheter</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-sheet"><div class="mock-app"><img src="../icon.png" alt="" /><div><b>Daily Ring Plus · À vie</b><small>Google Play</small></div></div><div class="mock-row"><span class="mock-small">💳 Carte de test, toujours approuvée</span></div><span class="free-chip">0&nbsp;$ · carte de test</span><span class="mock-btn primary tap">Acheter</span></div></div></div><figcaption>Acheter · carte de test, 0&nbsp;$</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge plus">✦</span><b>Bienvenue dans Plus</b><span class="mock-small">À vie · à vous pour de bon</span></div></div></div><figcaption>À vie · à vous pour de bon</figcaption></figure></li>
+            </ol>
+            <p class="flow-note">Les prix affichés sont ceux de la boutique. En tant que testeur, vous ne payez rien.</p>
+          </div>
+        </section>
+
+        <h2 class="guide-section">Pendant vos tests</h2>
+        <div class="guide-after">
+          <div>
+            <h3>Les mises à jour passent par le Play Store</h3>
+            <p>
+              Les nouvelles versions de test arrivent comme des mises à jour ordinaires. Si les
+              mises à jour automatiques sont activées dans le Play Store, vous n’avez rien à faire.
+            </p>
+          </div>
+          <div>
+            <h3>Envoyez vos commentaires</h3>
+            <p>
+              Utilisez le <a href="index.html?topic=bug#contact">formulaire de contact</a> pour
+              tout ce qui semble étrange, cassé ou confus, et pour vos idées. Le modèle de votre
+              appareil et votre version d’Android nous aident.
+            </p>
+          </div>
+          <div>
+            <h3>Plus est gratuit pour les testeurs</h3>
+            <p>
+              Votre achat passe par une carte de test Google Play : rien n’est facturé. Choisissez
+              <a href="#plus">À vie</a>.
+            </p>
+          </div>
+          <div>
+            <h3>Vos données sont conservées</h3>
+            <p>
+              La version de test est la vraie app. À sa sortie, Daily Ring vous arrivera
+              simplement comme une mise à jour, avec vos habitudes et votre historique.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="guide-section">En cas de problème</h2>
+        <div class="faq">
+          <details>
+            <summary>Le lien dit que je ne peux pas participer, ou que l’app n’est pas disponible</summary>
+            <p>
+              Le lien n’est ouvert qu’aux adresses inscrites sur la liste des testeurs. Vérifiez le
+              compte du navigateur qui l’a ouvert, ou ouvrez le lien dans une fenêtre privée et
+              connectez-vous avec le bon. Si c’est bien le bon compte, dites-le-nous par le
+              <a href="index.html?topic=question#contact">formulaire de contact</a> pour que nous
+              vérifiions la liste.
+            </p>
+          </details>
+          <details>
+            <summary>Je suis inscrit, mais le Play Store n’affiche toujours pas Daily Ring</summary>
+            <p>
+              Laissez-lui jusqu’à une heure, puis fermez et rouvrez le Play Store. La recherche peut
+              ne pas la trouver pendant un test fermé : utilisez plutôt le bouton Google Play de
+              l’étape 3.
+            </p>
+          </details>
+          <details>
+            <summary>Mon adresse n’est pas une adresse Gmail</summary>
+            <p>
+              Elle doit être celle d’un compte Google. N’importe quelle adresse peut l’être : créez
+              un compte Google avec elle, ou envoyez-nous plutôt votre adresse Gmail.
+            </p>
+          </details>
+          <details>
+            <summary>Comment quitter le test ?</summary>
+            <p>
+              Rouvrez le lien du test et touchez <strong>Quitter le programme</strong>, puis
+              désinstallez l’app. Si vous avez ajouté un courriel, supprimez d’abord le compte dans
+              <strong>Habitudes → Compte → Supprimer le compte</strong> pour effacer ses données ;
+              <a href="delete-account.html">voici comment</a>.
+            </p>
+          </details>
+        </div>
+
+        <div class="guide-end">
+          <p>
+            Quelque chose d’étrange, ou une idée ? Dites-le-nous. Chaque message est lu, et le test
+            sert justement à cela.
+          </p>
+          <a class="button button-primary" href="index.html?topic=bug#contact">Signaler un problème</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="../icon.png" alt="" />Daily Ring</a>
+        <nav aria-label="Pied de page">
+          <a href="index.html#features">Fonctionnalités</a>
+          <a href="index.html#faq">Aide</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Politique de confidentialité</a>
+          <a href="terms.html">Conditions de vente</a>
+          <a href="delete-account.html">Supprimer votre compte</a>
+          <a href="testflight.html">Bêta sur iPhone</a>
+          <a href="play-testing.html">Bêta sur Android</a>
+          <a href="../play-testing.html" hreflang="en" lang="en">English</a>
+        </nav>
+        <p class="copy">Créé par un développeur indépendant. Gratuit et sans pub.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test Daily Ring on iPhone · Daily Ring</title>
+    <meta
+      name="description"
+      content="How to join the Daily Ring beta on iPhone and iPad with TestFlight, step by step, once you have been invited."
+    />
+    <meta name="theme-color" content="#2f7fe8" />
+    <script>
+      // Before first paint, so a pinned theme never flashes the other one. site.js draws the switch.
+      document.documentElement.classList.add('theme-js');
+      try {
+        var theme = localStorage.getItem('daily-ring-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
+    <link rel="icon" href="icon.png" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="alternate" hreflang="en" href="https://dailyring.ca/testflight.html" />
+    <link rel="alternate" hreflang="fr" href="https://dailyring.ca/fr/testflight.html" />
+    <link rel="alternate" hreflang="x-default" href="https://dailyring.ca/testflight.html" />
+    <script src="site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="icon.png" alt="" /><span class="brand-name">Daily Ring</span></a>
+        <nav aria-label="Main">
+          <a class="nav-hide-sm" href="index.html#features">Features</a>
+          <a class="nav-hide-sm" href="index.html#faq">Help</a>
+          <a class="nav-hide-xs" href="privacy.html">Privacy</a>
+          <a class="nav-hide-sm" href="index.html#contact">Contact</a>
+          <a class="nav-cta" href="index.html#download">Get the app</a>
+          <button class="theme-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Theme"></button>
+          <a class="lang" href="fr/testflight.html" hreflang="fr" lang="fr" title="Français">FR</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <span class="pill meta">Beta testers · iPhone and iPad</span>
+          <h1>Test Daily Ring with TestFlight</h1>
+          <p class="lede">
+            Thank you for testing. You are already on the list, so all that is left is five
+            steps on your iPhone. It takes about five minutes.
+          </p>
+          <nav class="platform-switch" aria-label="Platform">
+            <a href="testflight.html" aria-current="page">iPhone and iPad</a>
+            <a href="play-testing.html">Android</a>
+          </nav>
+        </div>
+      </section>
+
+      <div class="guide">
+        <ul class="guide-facts">
+          <li><strong>About 5 minutes</strong><span>From the invitation to your first check-off</span></li>
+          <li><strong>Your iPhone or iPad</strong><span>And the email address you gave us</span></li>
+          <li><strong>Free</strong><span>TestFlight, the beta and test purchases cost nothing</span></li>
+        </ul>
+
+        <ol class="gsteps">
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">1</span>
+              <h2>Install TestFlight</h2>
+              <p>
+                TestFlight is Apple’s free app for trying apps before they reach the App Store.
+                Open the <strong>App Store</strong> on your iPhone, search for
+                <strong>TestFlight</strong>, and tap <strong>Get</strong>.
+              </p>
+              <p class="muted">
+                It is published by Apple. You only need to install it once, and it works on iPad
+                too.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-url">TestFlight</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <span class="mock-glyph">✈︎</span>
+                      <div><b>TestFlight</b><small>Apple</small></div>
+                    </div>
+                    <span class="mock-btn primary tap">Get</span>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line w60"></div>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+              <figcaption>Search the App Store, then tap Get</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">2</span>
+              <h2>Open the invitation on your iPhone</h2>
+              <p>
+                You will get an email from <strong>TestFlight</strong> inviting you to test
+                <strong>Daily Ring</strong>, sent to the address you gave us. Open it
+                <em>on your iPhone</em> and tap <strong>View in TestFlight</strong>.
+              </p>
+              <div class="tip">
+                <p>
+                  <strong>Opened it on a computer?</strong> The email also has a redeem code. Open
+                  TestFlight on your iPhone, tap <strong>Redeem</strong> at the top, and type the
+                  code in.
+                </p>
+              </div>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-head">Inbox</div>
+                  <div class="mock-card">
+                    <b>TestFlight</b>
+                    <span>You’re invited to test Daily Ring</span>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                    <span class="mock-btn primary tap">View in TestFlight</span>
+                    <span class="mock-small">Or redeem code <span class="mock-code">A1B2C3D4</span></span>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line w60"></div>
+                </div>
+              </div>
+              <figcaption>A simplified drawing of the email</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">3</span>
+              <h2>Accept, then install</h2>
+              <p>
+                TestFlight opens on Daily Ring. Tap <strong>Accept</strong>, then
+                <strong>Install</strong>. When it finishes, the button reads
+                <strong>Open</strong>, and Daily Ring is on your Home Screen with a small orange
+                dot beside its name, which marks a beta.
+              </p>
+              <p class="muted">
+                The <strong>What to Test</strong> notes on the same screen say what changed in this
+                build.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-head">TestFlight</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <img src="icon.png" alt="" />
+                      <div><b>Daily Ring</b><small>1.0.0</small></div>
+                    </div>
+                    <span class="mock-btn primary tap">Accept</span>
+                  </div>
+                  <div class="mock-card">
+                    <b>What to Test</b>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line"></div>
+                    <div class="mock-line w60"></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Accept, then Install</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">4</span>
+              <h2>Open Daily Ring and check something off</h2>
+              <p>
+                There is no sign-up. Daily Ring opens with three example habits you can rename,
+                change or delete. Tap a ring to check a habit off for today, and keep going until
+                every habit is done.
+              </p>
+              <p class="muted">Next: <a href="#plus">save your progress, then get Plus Lifetime free</a>.</p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="shot">
+                <img src="images/today.jpg" alt="The Today tab in Daily Ring, with two of five habits done" width="720" height="1276" loading="lazy" />
+              </div>
+              <figcaption>The Today tab</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">5</span>
+              <h2>Turn on automatic updates</h2>
+              <p>
+                In TestFlight, tap <strong>Daily Ring</strong> and switch on
+                <strong>Automatic Updates</strong>. New builds then install by themselves, and
+                you always test the latest one.
+              </p>
+              <p class="muted">
+                Each build stops opening 90 days after it was uploaded. With automatic updates on,
+                you will rarely see that happen.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-head">Daily Ring</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <img src="icon.png" alt="" />
+                      <div><b>Daily Ring</b><small>Beta</small></div>
+                    </div>
+                    <span class="mock-btn">Open</span>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-row tap">
+                      <span>Automatic Updates</span><span class="mock-toggle"></span>
+                    </div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>On the Daily Ring page in TestFlight</figcaption>
+            </figure>
+          </li>
+        </ol>
+
+
+        <section class="flows" id="plus" aria-labelledby="plus-title">
+          <div class="flows-head">
+            <h2 id="plus-title">Save your progress, then get Plus free</h2>
+            <p class="order">
+              <span style="--accent: var(--brand)"><b>1</b>Save your progress</span>
+              <i aria-hidden="true">→</i>
+              <span style="--accent: var(--c-amber)"><b>2</b>Plus Lifetime, free</span>
+            </p>
+          </div>
+
+          <div class="flow" style="--accent: var(--brand)">
+            <h3><b aria-hidden="true">1</b>Save your progress</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="images/beta-account.jpg" alt="The Habits tab, with the Account row ringed" width="720" height="931" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:6.0%;top:36.0%;width:88.1%;height:11.2%"></span></div></div><figcaption>Habits → Account</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="images/beta-save.jpg" alt="The Account sheet: email, password and confirm password, then Save progress" width="720" height="1182" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:9.7%;top:55.6%;width:80.1%;height:21.7%"></span><span class="ring" data-n=2 style="left:9.7%;top:84.7%;width:80.1%;height:5.5%"></span></div></div><figcaption>Email, password twice → Save progress</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-card"><span class="mock-small">Daily Ring</span><span class="mock-mail-title">Confirm your email</span><div class="mock-line w80"></div><div class="mock-line w60"></div><span class="mock-btn primary tap">Confirm email</span></div></div></div><figcaption>Tap Confirm email</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge">✓</span><b>Email confirmed</b><span class="mock-small">Head back to Daily Ring</span></div></div></div><figcaption>Saved</figcaption></figure></li>
+            </ol>
+          </div>
+
+          <div class="flow" style="--accent: var(--c-amber)">
+            <h3><b aria-hidden="true">2</b>Plus Lifetime, free</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="images/beta-get-plus.jpg" alt="The Habits tab, with the Get Plus button ringed" width="720" height="896" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:57.0%;top:18.4%;width:26.4%;height:7.2%"></span></div></div><figcaption>Get Plus</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="images/beta-lifetime.jpg" alt="The Plus sheet with Lifetime selected and the Buy button ringed" width="720" height="863" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:6.2%;top:46.3%;width:87.6%;height:16.2%"></span><span class="ring" data-n=2 style="left:6.2%;top:72.8%;width:87.6%;height:11.0%"></span></div></div><figcaption>Lifetime → Buy</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-sheet"><div class="mock-app"><img src="icon.png" alt="" /><div><b>Daily Ring Plus · Lifetime</b><small>Apple</small></div></div><span class="free-chip">Test purchase · $0</span><div class="mock-line w80"></div><span class="mock-btn primary tap">Confirm</span></div></div></div><figcaption>Confirm · not charged</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge plus">✦</span><b>Welcome to Plus</b><span class="mock-small">Lifetime · yours for good</span></div></div></div><figcaption>Lifetime · yours for good</figcaption></figure></li>
+            </ol>
+            <p class="flow-note">Prices on screen are the store’s. As a tester, you pay nothing.</p>
+          </div>
+        </section>
+
+        <h2 class="guide-section">While you test</h2>
+        <div class="guide-after">
+          <div>
+            <h3>Send feedback with a screenshot</h3>
+            <p>
+              Take a screenshot, tap its thumbnail, then tap <strong>Done</strong> and
+              <strong>Share Beta Feedback</strong>. Add a note and send it. Your screenshot and
+              note come straight to us.
+            </p>
+            <p>
+              Or open TestFlight, tap Daily Ring and tap <strong>Send Beta Feedback</strong>.
+            </p>
+          </div>
+          <div>
+            <h3>Plus is free for testers</h3>
+            <p>
+              Purchases in TestFlight are test purchases, never charged. Test subscriptions renew on a
+              fast clock and end by themselves, so pick <a href="#plus">Lifetime</a>.
+            </p>
+          </div>
+          <div>
+            <h3>The Apple Watch app</h3>
+            <p>
+              It comes with the beta. If it does not appear on your watch, open the
+              <strong>Watch</strong> app on your iPhone, scroll to Daily Ring and tap
+              <strong>Install</strong>. The watch app is part of Plus.
+            </p>
+          </div>
+          <div>
+            <h3>Your data carries over</h3>
+            <p>
+              The beta is the real app. When Daily Ring reaches the App Store, installing it from
+              there replaces the beta and keeps your habits and history.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="guide-section">If something goes wrong</h2>
+        <div class="faq">
+          <details>
+            <summary>I can’t find the invitation email</summary>
+            <p>
+              Search your mail for “TestFlight”, and check the junk or spam folder. It goes to the
+              email address you gave us. Still nothing after a day? Send us a message through the
+              <a href="index.html?topic=question#contact">contact form</a> and we will send it again.
+            </p>
+          </details>
+          <details>
+            <summary>“View in TestFlight” opens a web page instead</summary>
+            <p>
+              TestFlight is not installed yet, or the email was opened on a computer. Install
+              TestFlight (step 1), then tap the button again on your iPhone, or use the redeem
+              code in TestFlight’s <strong>Redeem</strong> button.
+            </p>
+          </details>
+          <details>
+            <summary>The invitation was sent to an address that isn’t my Apple Account</summary>
+            <p>
+              That is fine. The invitation works with whichever Apple Account is signed in on your
+              iPhone; it does not need to match the email it was sent to.
+            </p>
+          </details>
+          <details>
+            <summary>TestFlight says the beta is full or no longer available</summary>
+            <p>
+              The build you were invited to has expired or been replaced. Open TestFlight again in
+              a few minutes; if it still says so, tell us through the
+              <a href="index.html?topic=bug#contact">contact form</a>.
+            </p>
+          </details>
+          <details>
+            <summary>How do I leave the beta?</summary>
+            <p>
+              In TestFlight, tap Daily Ring, then <strong>Stop Testing</strong>. You can delete the
+              app as usual. If you added an email, delete the account first under
+              <strong>Habits → Account → Delete account</strong> to remove its data;
+              <a href="delete-account.html">here is how</a>.
+            </p>
+          </details>
+        </div>
+
+        <div class="guide-end">
+          <p>
+            Something odd, or an idea? Tell us. Every message is read, and the beta exists to find
+            exactly that.
+          </p>
+          <a class="button button-primary" href="index.html?topic=bug#contact">Report a problem</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="icon.png" alt="" />Daily Ring</a>
+        <nav aria-label="Footer">
+          <a href="index.html#features">Features</a>
+          <a href="index.html#faq">Help</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms of sale</a>
+          <a href="delete-account.html">Delete your account</a>
+          <a href="testflight.html">Beta on iPhone</a>
+          <a href="play-testing.html">Beta on Android</a>
+          <a href="fr/testflight.html" hreflang="fr" lang="fr">Français</a>
+        </nav>
+        <p class="copy">Made by an independent developer. Free, with no ads.</p>
+      </div>
+    </footer>
+  </body>
+</html>

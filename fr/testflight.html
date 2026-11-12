@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tester Daily Ring sur iPhone · Daily Ring</title>
+    <meta
+      name="description"
+      content="Comment rejoindre la bêta de Daily Ring sur iPhone et iPad avec TestFlight, étape par étape, une fois invité."
+    />
+    <meta name="theme-color" content="#2f7fe8" />
+    <script>
+      // Before first paint, so a pinned theme never flashes the other one. site.js draws the switch.
+      document.documentElement.classList.add('theme-js');
+      try {
+        var theme = localStorage.getItem('daily-ring-theme');
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
+    <link rel="icon" href="../icon.png" />
+    <link rel="apple-touch-icon" href="../icon.png" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="alternate" hreflang="en" href="https://dailyring.ca/testflight.html" />
+    <link rel="alternate" hreflang="fr" href="https://dailyring.ca/fr/testflight.html" />
+    <link rel="alternate" hreflang="x-default" href="https://dailyring.ca/testflight.html" />
+    <script src="../site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <header class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="../icon.png" alt="" /><span class="brand-name">Daily Ring</span></a>
+        <nav aria-label="Menu principal">
+          <a class="nav-hide-sm" href="index.html#features">Fonctionnalités</a>
+          <a class="nav-hide-sm" href="index.html#faq">Aide</a>
+          <a class="nav-hide-xs" href="privacy.html">Vie privée</a>
+          <a class="nav-hide-sm" href="index.html#contact">Contact</a>
+          <a class="nav-cta" href="index.html#download">Obtenir l’app</a>
+          <button class="theme-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Thème"></button>
+          <a class="lang" href="../testflight.html" hreflang="en" lang="en" title="English">EN</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <span class="pill meta">Bêta-testeurs · iPhone et iPad</span>
+          <h1>Tester Daily Ring avec TestFlight</h1>
+          <p class="lede">
+            Merci de tester. Vous êtes déjà sur la liste : il ne reste que cinq étapes sur votre
+            iPhone. Comptez environ cinq minutes.
+          </p>
+          <nav class="platform-switch" aria-label="Plateforme">
+            <a href="testflight.html" aria-current="page">iPhone et iPad</a>
+            <a href="play-testing.html">Android</a>
+          </nav>
+        </div>
+      </section>
+
+      <div class="guide">
+        <ul class="guide-facts">
+          <li><strong>Environ 5 minutes</strong><span>De l’invitation à votre première habitude cochée</span></li>
+          <li><strong>Votre iPhone ou iPad</strong><span>Et l’adresse courriel que vous nous avez donnée</span></li>
+          <li><strong>Gratuit</strong><span>TestFlight, la bêta et les achats de test ne coûtent rien</span></li>
+        </ul>
+
+        <ol class="gsteps">
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">1</span>
+              <h2>Installez TestFlight</h2>
+              <p>
+                TestFlight est l’app gratuite d’Apple pour essayer des apps avant leur arrivée sur
+                l’App Store. Ouvrez l’<strong>App Store</strong> sur votre iPhone, cherchez
+                <strong>TestFlight</strong> et touchez <strong>Obtenir</strong>.
+              </p>
+              <p class="muted">
+                Elle est publiée par Apple. Il suffit de l’installer une fois, et elle fonctionne
+                aussi sur iPad.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-url">TestFlight</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <span class="mock-glyph">✈︎</span>
+                      <div><b>TestFlight</b><small>Apple</small></div>
+                    </div>
+                    <span class="mock-btn primary tap">Obtenir</span>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line w60"></div>
+                  <div class="mock-line"></div>
+                </div>
+              </div>
+              <figcaption>Cherchez dans l’App Store, puis touchez Obtenir</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">2</span>
+              <h2>Ouvrez l’invitation sur votre iPhone</h2>
+              <p>
+                Vous recevrez un courriel de <strong>TestFlight</strong> vous invitant à tester
+                <strong>Daily Ring</strong>, à l’adresse que vous nous avez donnée. Ouvrez-le
+                <em>sur votre iPhone</em> et touchez <strong>Afficher dans TestFlight</strong>.
+              </p>
+              <div class="tip">
+                <p>
+                  <strong>Vous l’avez ouvert sur un ordinateur ?</strong> Le courriel contient
+                  aussi un code. Ouvrez TestFlight sur votre iPhone, touchez
+                  <strong>Utiliser</strong> en haut et saisissez le code.
+                </p>
+              </div>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-head">Boîte de réception</div>
+                  <div class="mock-card">
+                    <b>TestFlight</b>
+                    <span>Vous êtes invité à tester Daily Ring</span>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                    <span class="mock-btn primary tap">Afficher dans TestFlight</span>
+                    <span class="mock-small">Ou utilisez le code <span class="mock-code">A1B2C3D4</span></span>
+                  </div>
+                  <div class="mock-line w80"></div>
+                  <div class="mock-line w60"></div>
+                </div>
+              </div>
+              <figcaption>Un dessin simplifié du courriel</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">3</span>
+              <h2>Acceptez, puis installez</h2>
+              <p>
+                TestFlight s’ouvre sur Daily Ring. Touchez <strong>Accepter</strong>, puis
+                <strong>Installer</strong>. Une fois l’installation terminée, le bouton indique
+                <strong>Ouvrir</strong>, et Daily Ring est sur votre écran d’accueil avec un petit
+                point orange à côté de son nom, qui signale une bêta.
+              </p>
+              <p class="muted">
+                Les notes <strong>À tester</strong> sur le même écran disent ce qui a changé dans
+                cette version.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-head">TestFlight</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <img src="../icon.png" alt="" />
+                      <div><b>Daily Ring</b><small>1.0.0</small></div>
+                    </div>
+                    <span class="mock-btn primary tap">Accepter</span>
+                  </div>
+                  <div class="mock-card">
+                    <b>À tester</b>
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line"></div>
+                    <div class="mock-line w60"></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Accepter, puis Installer</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">4</span>
+              <h2>Ouvrez Daily Ring et cochez une habitude</h2>
+              <p>
+                Aucune inscription. Daily Ring s’ouvre avec trois habitudes d’exemple que vous
+                pouvez renommer, modifier ou supprimer. Touchez un anneau pour cocher une habitude
+                aujourd’hui, et continuez jusqu’à ce que tout soit fait.
+              </p>
+              <p class="muted">Ensuite : <a href="#plus">sauvegardez vos progrès, puis obtenez Plus à vie gratuitement</a>.</p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="shot">
+                <img src="../images/fr/today.jpg" alt="L’onglet Aujourd’hui de Daily Ring, avec deux habitudes sur cinq faites" width="720" height="1276" loading="lazy" />
+              </div>
+              <figcaption>L’onglet Aujourd’hui</figcaption>
+            </figure>
+          </li>
+
+          <li class="gstep">
+            <div>
+              <span class="gstep-num" aria-hidden="true">5</span>
+              <h2>Activez les mises à jour automatiques</h2>
+              <p>
+                Dans TestFlight, touchez <strong>Daily Ring</strong> et activez
+                <strong>Mises à jour automatiques</strong>. Les nouvelles versions s’installent
+                alors toutes seules, et vous testez toujours la dernière.
+              </p>
+              <p class="muted">
+                Chaque version cesse de s’ouvrir 90 jours après sa mise en ligne. Avec les mises à
+                jour automatiques, cela n’arrive presque jamais.
+              </p>
+            </div>
+            <figure class="gstep-visual">
+              <div class="mock" aria-hidden="true">
+                <div class="mock-screen">
+                  <div class="mock-head">Daily Ring</div>
+                  <div class="mock-card">
+                    <div class="mock-app">
+                      <img src="../icon.png" alt="" />
+                      <div><b>Daily Ring</b><small>Bêta</small></div>
+                    </div>
+                    <span class="mock-btn">Ouvrir</span>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-row tap">
+                      <span>Mises à jour automatiques</span><span class="mock-toggle"></span>
+                    </div>
+                  </div>
+                  <div class="mock-card">
+                    <div class="mock-line w80"></div>
+                    <div class="mock-line w60"></div>
+                  </div>
+                </div>
+              </div>
+              <figcaption>Sur la page de Daily Ring dans TestFlight</figcaption>
+            </figure>
+          </li>
+        </ol>
+
+
+        <section class="flows" id="plus" aria-labelledby="plus-title">
+          <div class="flows-head">
+            <h2 id="plus-title">Sauvegardez vos progrès, puis obtenez Plus gratuitement</h2>
+            <p class="order">
+              <span style="--accent: var(--brand)"><b>1</b>Sauvegardez vos progrès</span>
+              <i aria-hidden="true">→</i>
+              <span style="--accent: var(--c-amber)"><b>2</b>Plus à vie, gratuit</span>
+            </p>
+          </div>
+
+          <div class="flow" style="--accent: var(--brand)">
+            <h3><b aria-hidden="true">1</b>Sauvegardez vos progrès</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="../images/fr/beta-account.jpg" alt="L’onglet Habitudes, avec la ligne Compte entourée" width="720" height="931" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:6.2%;top:36.0%;width:87.6%;height:11.2%"></span></div></div><figcaption>Habitudes → Compte</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="../images/fr/beta-save.jpg" alt="La fiche Compte : courriel, mot de passe et confirmation, puis Sauvegarder" width="720" height="1218" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:10.2%;top:57.4%;width:79.9%;height:20.3%"></span><span class="ring" data-n=2 style="left:10.2%;top:85.0%;width:79.9%;height:5.4%"></span></div></div><figcaption>Courriel, mot de passe ×2 → Sauvegarder</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-card"><span class="mock-small">Daily Ring</span><span class="mock-mail-title">Confirmez votre courriel</span><div class="mock-line w80"></div><div class="mock-line w60"></div><span class="mock-btn primary tap">Confirmer le courriel</span></div></div></div><figcaption>Touchez Confirmer le courriel</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge">✓</span><b>Courriel confirmé</b><span class="mock-small">Retournez dans Daily Ring</span></div></div></div><figcaption>Sauvegardé</figcaption></figure></li>
+            </ol>
+          </div>
+
+          <div class="flow" style="--accent: var(--c-amber)">
+            <h3><b aria-hidden="true">2</b>Plus à vie, gratuit</h3>
+            <ol class="strip">
+              <li><figure><div class="screen"><img src="../images/fr/beta-get-plus.jpg" alt="L’onglet Habitudes, avec le bouton Obtenir Plus entouré" width="720" height="896" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" style="left:50.5%;top:18.4%;width:32.3%;height:7.2%"></span></div></div><figcaption>Obtenir Plus</figcaption></figure></li>
+              <li><figure><div class="screen"><img src="../images/fr/beta-lifetime.jpg" alt="La fiche Plus avec À vie choisi et le bouton Acheter entouré" width="720" height="854" loading="lazy" /><div class="ring-area" aria-hidden="true"><span class="ring" data-n=1 style="left:6.2%;top:45.7%;width:87.6%;height:16.6%"></span><span class="ring" data-n=2 style="left:6.2%;top:72.5%;width:87.6%;height:11.1%"></span></div></div><figcaption>À vie → Acheter</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-sheet"><div class="mock-app"><img src="../icon.png" alt="" /><div><b>Daily Ring Plus · À vie</b><small>Apple</small></div></div><span class="free-chip">Achat test · 0&nbsp;$</span><div class="mock-line w80"></div><span class="mock-btn primary tap">Confirmer</span></div></div></div><figcaption>Confirmez · rien n’est facturé</figcaption></figure></li>
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-big"><span class="badge plus">✦</span><b>Bienvenue dans Plus</b><span class="mock-small">À vie · à vous pour de bon</span></div></div></div><figcaption>À vie · à vous pour de bon</figcaption></figure></li>
+            </ol>
+            <p class="flow-note">Les prix affichés sont ceux de la boutique. En tant que testeur, vous ne payez rien.</p>
+          </div>
+        </section>
+
+        <h2 class="guide-section">Pendant vos tests</h2>
+        <div class="guide-after">
+          <div>
+            <h3>Envoyez vos commentaires avec une capture</h3>
+            <p>
+              Faites une capture d’écran, touchez sa vignette, puis <strong>OK</strong> et
+              <strong>Partager un commentaire bêta</strong>. Ajoutez une note et envoyez : la
+              capture et la note nous arrivent directement.
+            </p>
+            <p>
+              Ou ouvrez TestFlight, touchez Daily Ring, puis
+              <strong>Envoyer un commentaire bêta</strong>.
+            </p>
+          </div>
+          <div>
+            <h3>Plus est gratuit pour les testeurs</h3>
+            <p>
+              Les achats dans TestFlight sont des achats de test, jamais facturés. Les abonnements de
+              test se renouvellent en accéléré et prennent fin d’eux-mêmes : choisissez
+              <a href="#plus">À vie</a>.
+            </p>
+          </div>
+          <div>
+            <h3>L’app Apple Watch</h3>
+            <p>
+              Elle est fournie avec la bêta. Si elle n’apparaît pas sur votre montre, ouvrez l’app
+              <strong>Watch</strong> sur votre iPhone, faites défiler jusqu’à Daily Ring et touchez
+              <strong>Installer</strong>. L’app pour montre fait partie de Plus.
+            </p>
+          </div>
+          <div>
+            <h3>Vos données sont conservées</h3>
+            <p>
+              La bêta est la vraie app. Quand Daily Ring arrivera sur l’App Store, l’installer
+              depuis l’App Store remplacera la bêta en gardant vos habitudes et votre historique.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="guide-section">En cas de problème</h2>
+        <div class="faq">
+          <details>
+            <summary>Je ne trouve pas le courriel d’invitation</summary>
+            <p>
+              Cherchez « TestFlight » dans vos courriels et vérifiez le dossier des indésirables. Il
+              est envoyé à l’adresse que vous nous avez donnée. Toujours rien après une journée ?
+              Écrivez-nous par le <a href="index.html?topic=question#contact">formulaire de
+              contact</a> et nous le renverrons.
+            </p>
+          </details>
+          <details>
+            <summary>« Afficher dans TestFlight » ouvre une page web</summary>
+            <p>
+              TestFlight n’est pas encore installée, ou le courriel a été ouvert sur un ordinateur.
+              Installez TestFlight (étape 1), puis touchez de nouveau le bouton sur votre iPhone,
+              ou saisissez le code avec le bouton <strong>Utiliser</strong> de TestFlight.
+            </p>
+          </details>
+          <details>
+            <summary>L’invitation a été envoyée à une adresse qui n’est pas mon compte Apple</summary>
+            <p>
+              Aucun problème. L’invitation fonctionne avec le compte Apple connecté sur votre
+              iPhone, quel qu’il soit ; il n’a pas besoin de correspondre à l’adresse du courriel.
+            </p>
+          </details>
+          <details>
+            <summary>TestFlight dit que la bêta est complète ou n’est plus disponible</summary>
+            <p>
+              La version à laquelle vous avez été invité a expiré ou a été remplacée. Rouvrez
+              TestFlight dans quelques minutes ; si le message reste, dites-le-nous par le
+              <a href="index.html?topic=bug#contact">formulaire de contact</a>.
+            </p>
+          </details>
+          <details>
+            <summary>Comment quitter la bêta ?</summary>
+            <p>
+              Dans TestFlight, touchez Daily Ring, puis <strong>Arrêter le test</strong>. Vous
+              pouvez ensuite supprimer l’app comme d’habitude. Si vous avez ajouté un courriel,
+              supprimez d’abord le compte dans
+              <strong>Habitudes → Compte → Supprimer le compte</strong> pour effacer ses données ;
+              <a href="delete-account.html">voici comment</a>.
+            </p>
+          </details>
+        </div>
+
+        <div class="guide-end">
+          <p>
+            Quelque chose d’étrange, ou une idée ? Dites-le-nous. Chaque message est lu, et la bêta
+            sert justement à cela.
+          </p>
+          <a class="button button-primary" href="index.html?topic=bug#contact">Signaler un problème</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="container">
+        <a class="brand" href="index.html"><img src="../icon.png" alt="" />Daily Ring</a>
+        <nav aria-label="Pied de page">
+          <a href="index.html#features">Fonctionnalités</a>
+          <a href="index.html#faq">Aide</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="privacy.html">Politique de confidentialité</a>
+          <a href="terms.html">Conditions de vente</a>
+          <a href="delete-account.html">Supprimer votre compte</a>
+          <a href="testflight.html">Bêta sur iPhone</a>
+          <a href="play-testing.html">Bêta sur Android</a>
+          <a href="../testflight.html" hreflang="en" lang="en">English</a>
+        </nav>
+        <p class="copy">Créé par un développeur indépendant. Gratuit et sans pub.</p>
+      </div>
+    </footer>
+  </body>
+</html>
