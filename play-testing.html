@@ -191,7 +191,7 @@
                 There is no sign-up. Daily Ring opens with three example habits you can rename,
                 change or delete. Tap a ring to check a habit off for today.
               </p>
-              <p class="muted">Next: <a href="#plus">save your progress, then get Plus Lifetime free</a>.</p>
+              <p class="muted">Next: <a href="#plus">save your progress, then get Plus Lifetime free</a>, and <a href="#watch">add your watch</a>.</p>
             </div>
             <figure class="gstep-visual">
               <div class="shot">
@@ -257,6 +257,30 @@
           </div>
         </section>
 
+        <section class="flows" id="watch" aria-labelledby="watch-title">
+          <div class="flows-head">
+            <h2 id="watch-title">Add your Wear OS watch</h2>
+            <p class="muted">
+              The watch app comes with <a href="#plus">Plus</a>, so get Lifetime first. It needs
+              Wear OS 3 or later, and Daily Ring kept on your phone: the watch shows the habits
+              your phone sends it.
+            </p>
+          </div>
+
+          <div class="flow" style="--accent: var(--c-teal)">
+            <h3><b aria-hidden="true">⌚</b>Put Daily Ring on your watch</h3>
+            <ol class="strip strip-3">
+              <li><figure><div class="screen screen-drawn" aria-hidden="true"><div class="mock-screen"><div class="mock-app"><img src="icon.png" alt="" /><div><b>Daily Ring</b><small>Google Play</small></div></div><div class="mock-row"><span class="mock-btn" style="flex: 1">Uninstall</span><span class="mock-btn primary" style="flex: 1">Open</span></div><div class="mock-card"><span class="mock-small">Available on more devices</span><div class="mock-row"><span class="mock-device"><span>⌚</span><b>Your watch</b></span><span class="mock-btn primary small tap">Install</span></div></div><div class="mock-line w80"></div><div class="mock-line w60"></div></div></div><figcaption>On your phone, Daily Ring in the Play Store → your watch → Install</figcaption></figure></li>
+              <li><figure><div class="screen screen-wear" aria-hidden="true"><div class="wear-ui"><span class="wear-app dim"><img src="icon.png" alt="" style="filter: grayscale(1)" />Other app</span><span class="wear-app tap"><img src="icon.png" alt="" />Daily Ring</span><span class="wear-app dim"><img src="icon.png" alt="" style="filter: grayscale(1)" />Other app</span></div></div><figcaption>Open Daily Ring from the watch’s apps</figcaption></figure></li>
+              <li><figure><div class="screen screen-wear"><img src="images/wear-today.png" alt="Daily Ring on Wear OS: today’s habits, 3 of 5 done" width="454" height="454" loading="lazy" /></div><figcaption>Tap a habit to check it off</figcaption></figure></li>
+            </ol>
+            <p class="flow-note">
+              Or, on the watch: <strong>Play Store → Apps on your phone → Daily Ring</strong>.
+              Searching won’t find it during the test.
+            </p>
+          </div>
+        </section>
+
         <h2 class="guide-section">While you test</h2>
         <div class="guide-after">
           <div>
@@ -306,6 +330,21 @@
             <p>
               Give it up to an hour, then close and reopen the Play Store. Searching for it may not
               work during a closed test, so use the Google Play button in step 3 instead.
+            </p>
+          </details>
+          <details>
+            <summary>My watch says “Won’t work on your device”</summary>
+            <p>
+              Check that the watch runs Wear OS 3 or later and that its Play Store uses the same
+              Google account as your phone. Then, in the watch’s settings, find the Play Store
+              app, clear its cache, and install again from your phone.
+            </p>
+          </details>
+          <details>
+            <summary>My watch shows “Daily Ring Plus” instead of my habits</summary>
+            <p>
+              The watch app comes with Plus. <a href="#plus">Get Lifetime</a> on your phone, then
+              open Daily Ring there with the watch nearby, so it can tell the watch.
             </p>
           </details>
           <details>

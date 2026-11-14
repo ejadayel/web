@@ -3843,3 +3843,100 @@ footer.site .copy {
   height: 40px;
   border-radius: 10px;
 }
+
+/* Beta guide on Android: "Add your Wear OS watch". A three-picture strip whose
+   watch frames are round cases, dark as the watch always is. */
+
+.strip-3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.screen-wear {
+  max-width: 180px;
+  aspect-ratio: 1;
+  /* centred on a phone frame's height, so the captions line up */
+  margin-block: calc((min(220px, 100%) * 930 / 720 - min(180px, 100%)) / 2);
+  min-height: 0;
+  padding: 7px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #3a3d44, #121317 55%, #26282e);
+  /* the drawn watch's contents scale with it */
+  container-type: inline-size;
+}
+
+.screen-wear img {
+  display: block;
+  border-radius: 50%;
+  background: #000;
+}
+
+.wear-ui {
+  height: 100%;
+  border-radius: 50%;
+  background: #000;
+  color: #f1f3f5;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 4cqw;
+  overflow: hidden;
+  font-size: 7cqw;
+}
+
+.wear-ui .wear-app {
+  display: flex;
+  align-items: center;
+  gap: 4cqw;
+  padding: 3cqw 8cqw 3cqw 3cqw;
+  border-radius: 999px;
+  background: #1d2129;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.wear-ui .wear-app img {
+  width: 15cqw;
+  height: 15cqw;
+  border-radius: 50%;
+}
+
+.wear-ui .wear-app.dim {
+  opacity: 0.4;
+}
+
+.mock-device {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mock-device > span:first-child {
+  font-size: 18px;
+}
+
+@media (max-width: 900px) {
+  .strip-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .strip-3 > li:nth-child(2)::after {
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  /* the phone on its own row, the two watches side by side under it */
+  .strip-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .strip-3 > li:nth-child(2)::after {
+    display: none;
+  }
+  .strip-3 > li:first-child {
+    grid-column: 1 / -1;
+  }
+  .strip-3 .screen-wear {
+    margin-block: 0;
+  }
+}

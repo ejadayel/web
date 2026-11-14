@@ -7,7 +7,7 @@ Plain HTML, CSS and JavaScript — no build step. Edit a file, push to `main`, a
 - `index.html` — support: features, FAQ and the contact form
 - `privacy.html` — privacy policy
 - `delete-account.html` — how to delete an account
-- `testflight.html` and `play-testing.html` — step-by-step guides for beta testers already on the TestFlight or Play closed-test list; the phones in them are simplified drawings (`.mock` in `styles.css`) with no store logos, beside real screenshots (`images/android-*.jpg` are cropped from the Play slides in the app repo's `store/google-play/screenshots/`)
+- `testflight.html` and `play-testing.html` — step-by-step guides for beta testers already on the TestFlight or Play closed-test list (the Play one also puts the app on a Wear OS watch, `#watch`); the phones in them are simplified drawings (`.mock` in `styles.css`) with no store logos, beside real screenshots (`images/android-*.jpg` are cropped from the Play slides in the app repo's `store/google-play/screenshots/`)
 - `terms.html` — terms of sale for Daily Ring Plus: renewal, refunds, and what happens if the app is discontinued
 - `images/` — screenshots cropped from the App Store slides in the app repo's `store/` (`fr/` for the French captures), and `icons/`, the Plus app-icon previews from the app's `assets/images/app-icons/`
 - `audio/` — the Plus sound packs' fanfares, converted to MP3 from the app's `assets/audio/`, played by the Plus section's sound buttons
