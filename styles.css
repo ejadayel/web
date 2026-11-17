@@ -2982,11 +2982,13 @@ footer.site .brand img {
   border-radius: 7px;
 }
 
+/* Its own line, left-aligned with the brand and the copy: ten links no longer
+   fit beside the brand, and pushed right they wrapped out of line. */
 footer.site nav {
   display: flex;
+  flex-basis: 100%;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-left: auto;
+  gap: 10px 20px;
 }
 
 footer.site nav a {
