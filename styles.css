@@ -2988,7 +2988,7 @@ footer.site nav {
   display: flex;
   flex-basis: 100%;
   flex-wrap: wrap;
-  gap: 10px 20px;
+  gap: 4px 20px;
 }
 
 footer.site nav a {
