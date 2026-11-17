@@ -11,20 +11,14 @@ const CONTACT_ENDPOINT = 'https://csapfwigvxyasodfiejy.supabase.co/functions/v1/
 // design: it ships in the app and identifies the project; RLS guards the data.
 const SUPABASE_KEY = 'sb_publishable_vAQ6cdTuxk6fakum5fxgjQ_irWdT8iF';
 
-// The store listings, once they are live, per page language.
+// Store links for the "coming soon" badges, per page language.
 // - An empty string keeps that store's badge as "coming soon" text.
 // - A URL turns it into a download link on every page in that language.
-// - The App Store link has no country, so Apple picks the visitor's storefront;
-//   `?l=fr` asks for the French listing in it.
+// - The App Store is live, so its official badge and link sit in the HTML
+//   (`.store-art`) instead; do the same for Google Play once it is live.
 const STORE_LINKS = {
-  en: {
-    appStore: 'https://apps.apple.com/app/id6823733199',
-    googlePlay: '',
-  },
-  fr: {
-    appStore: 'https://apps.apple.com/app/id6823733199?l=fr',
-    googlePlay: '',
-  },
+  en: { googlePlay: '' },
+  fr: { googlePlay: '' },
 };
 
 // Real reviews only: App Store and Google Play reviews, or beta testers who

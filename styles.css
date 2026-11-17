@@ -480,15 +480,31 @@ header.site nav .theme-toggle[aria-expanded='true'] {
   margin-bottom: 12px;
 }
 
-/* Store badges. Each is an <a> with no href until site.js has a store URL for
-   it, so a "coming soon" badge is plain text: not focusable, not a dead link.
-   Neutral glyphs rather than the stores' logos, which only their official
-   badge artwork may carry; swap that artwork in once the listings are live. */
+/* Store badges.
+   - A live store gets its official artwork, unmodified (`.store-art`), at the
+     height of the "coming soon" badges beside it.
+   - A store not live yet is an <a> with no href until site.js has a URL for
+     it, so it is plain text: not focusable, not a dead link. It uses a neutral
+     glyph, since only the official artwork may carry the store's logo.
+   - Apple asks for clear space of a quarter of the badge's height around it,
+     hence the 16px gap. */
 
 .store-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  align-items: center;
+  gap: 16px;
+}
+
+.store-art {
+  display: inline-flex;
+  border-radius: 10px;
+}
+
+.store-art img {
+  display: block;
+  height: 59px;
+  width: auto;
 }
 
 .store-badge {
