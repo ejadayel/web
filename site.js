@@ -11,11 +11,20 @@ const CONTACT_ENDPOINT = 'https://csapfwigvxyasodfiejy.supabase.co/functions/v1/
 // design: it ships in the app and identifies the project; RLS guards the data.
 const SUPABASE_KEY = 'sb_publishable_vAQ6cdTuxk6fakum5fxgjQ_irWdT8iF';
 
-// The store listings, once they are live. An empty string keeps that store's
-// badge as "coming soon" text; a URL turns it into a download link on every page.
+// The store listings, once they are live, per page language.
+// - An empty string keeps that store's badge as "coming soon" text.
+// - A URL turns it into a download link on every page in that language.
+// - The App Store link has no country, so Apple picks the visitor's storefront;
+//   `?l=fr` asks for the French listing in it.
 const STORE_LINKS = {
-  appStore: '',
-  googlePlay: '',
+  en: {
+    appStore: 'https://apps.apple.com/app/id6823733199',
+    googlePlay: '',
+  },
+  fr: {
+    appStore: 'https://apps.apple.com/app/id6823733199?l=fr',
+    googlePlay: '',
+  },
 };
 
 // Real reviews only: App Store and Google Play reviews, or beta testers who
@@ -73,7 +82,8 @@ const svg = (paths, className) =>
 
 // Store badges: link the ones whose listing is live.
 document.querySelectorAll('.store-badge[data-store]').forEach((badge) => {
-  const url = STORE_LINKS[badge.dataset.store];
+  const lang = document.documentElement.lang.startsWith('fr') ? 'fr' : 'en';
+  const url = STORE_LINKS[lang][badge.dataset.store];
   if (!url) return;
   badge.href = url;
   badge.classList.remove('is-soon');
